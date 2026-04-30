@@ -763,9 +763,9 @@ function buildCard(u) {
 
 const contentArea = document.getElementById('content-area');
 
-// Group weeks by month (preserving insertion order)
+// Group weeks by month in reverse order (newest first)
 const monthMap = new Map();
-WEEKS.forEach(w => {
+[...WEEKS].reverse().forEach(w => {
   if (!monthMap.has(w.month)) monthMap.set(w.month, []);
   monthMap.get(w.month).push(w);
 });
