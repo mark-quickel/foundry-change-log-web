@@ -1,0 +1,44 @@
+name: Daily Changelog Update
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 08:00 UTC every day
+  workflow_dispatch:        # allow manual runs from the Actions tab
+
+permissions:
+  contents: write           # needed to commit updates.json back to the repo
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch changelog updates
+        run: python scripts/fetch_updates.py
+
+      - name: Detect changes
+        id: changes
+        run: |
+          git diff --quiet updates.json sources.json \
+            && echo "changed=false" >> "$GITHUB_OUTPUT" \
+            || echo "changed=true"  >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add updates.json sources.json
+          git commit -m "chore: auto-update changelog $(date -u +%Y-%m-%d) [skip ci]"
+          git push
