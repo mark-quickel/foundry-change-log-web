@@ -1,0 +1,875 @@
+[
+  {
+    "week": 1,
+    "category": "claude",
+    "date": "2026-02-05",
+    "title": "Claude Opus 4.6 API Launch + Extended Thinking GA",
+    "summary": "Anthropic released Claude Opus 4.6 to the API with extended thinking GA, compaction API beta, fine-grained streaming GA, and 1M token context window in beta. Also introduced data residency options for enterprise customers.",
+    "impact": "Enterprises can now use Claude's most capable model via API with thinking transparency, longer context, and regional data controls — enabling compliance-sensitive RAG and agentic workloads.",
+    "links": [
+      { "label": "Claude Opus 4.6 Announcement", "url": "https://www.anthropic.com/news/claude-opus-4-6" },
+      { "label": "What's New in Claude 4.6", "url": "https://docs.anthropic.com/en/about-claude/models/whats-new-claude-4-6" },
+      { "label": "Adaptive Thinking Docs", "url": "https://docs.anthropic.com/en/build-with-claude/adaptive-thinking" },
+      { "label": "Compaction API Docs", "url": "https://docs.anthropic.com/en/build-with-claude/compaction" },
+      { "label": "Data Residency Docs", "url": "https://docs.anthropic.com/en/build-with-claude/data-residency" }
+    ]
+  },
+  {
+    "week": 1,
+    "category": "claude",
+    "date": "2026-02-07",
+    "title": "Claude Opus 4.6 Fast Mode (2.5× Faster, Priority Queue)",
+    "summary": "Anthropic launched Fast Mode for Opus 4.6, offering 2.5× faster inference at premium pricing via a waitlist. Targets latency-sensitive production workloads without sacrificing model quality.",
+    "impact": "Critical for real-time customer-facing apps and agents that need Opus-level quality with near-Sonnet speeds.",
+    "links": [
+      { "label": "Fast Mode Docs", "url": "https://docs.anthropic.com/en/build-with-claude/fast-mode" },
+      { "label": "Fast Mode Waitlist", "url": "https://claude.com/fast-mode" }
+    ]
+  },
+  {
+    "week": 2,
+    "category": "foundry",
+    "date": "2026-02-17",
+    "title": "Claude Opus 4.6 Available in Azure Foundry Model Catalog",
+    "summary": "Claude Opus 4.6 is now available in the Foundry model catalog (East US 2 and Sweden Central). Supports 1M token context, priced at $5/$25 per MTok input/output.",
+    "impact": "Azure customers can deploy Opus 4.6 within Foundry without leaving their Azure environment, enabling compliant agentic pipelines with Anthropic's strongest model.",
+    "links": [
+      { "label": "Claude Opus 4.6 in Foundry", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" },
+      { "label": "Foundry Model Catalog", "url": "https://ai.azure.com/catalog" }
+    ]
+  },
+  {
+    "week": 2,
+    "category": "claude",
+    "date": "2026-02-17",
+    "title": "Claude Sonnet 4.6 Launch: Web Search GA + Code Execution Free + All Tools GA",
+    "summary": "Claude Sonnet 4.6 launched on the API. Web search tool is now generally available, code execution tool is now free, and all Claude tools (web search, code exec, files, computer use) are GA.",
+    "impact": "Sonnet 4.6 is now the recommended default for production agentic workflows. Eliminating code execution costs significantly lowers TCO for data-heavy pipelines.",
+    "links": [
+      { "label": "Claude Sonnet 4.6 Announcement", "url": "https://www.anthropic.com/news/claude-sonnet-4-6" },
+      { "label": "Web Search Tool Docs", "url": "https://docs.anthropic.com/en/agents-and-tools/tool-use/web-search-tool" },
+      { "label": "Code Execution Tool Docs", "url": "https://docs.anthropic.com/en/agents-and-tools/tool-use/code-execution-tool" }
+    ]
+  },
+  {
+    "week": 2,
+    "category": "claude",
+    "date": "2026-02-19",
+    "title": "Automatic Prompt Caching Enabled + Sonnet 3.7 & Haiku 3.5 Retired",
+    "summary": "Anthropic enabled automatic prompt caching across the API — no code changes needed; caching activates when prompts exceed the threshold. Simultaneously, Claude Sonnet 3.7 and Haiku 3.5 were retired from the API.",
+    "impact": "Automatic caching reduces latency and cost for repeated-context workflows (e.g., RAG, long-context agents) with zero engineering effort. Teams using 3.7 or 3.5 must migrate to 4.x models.",
+    "links": [
+      { "label": "Prompt Caching – Automatic Caching Docs", "url": "https://docs.anthropic.com/en/build-with-claude/prompt-caching#automatic-caching" },
+      { "label": "Model Deprecations", "url": "https://docs.anthropic.com/en/about-claude/model-deprecations" }
+    ]
+  },
+  {
+    "week": 2,
+    "category": "foundry",
+    "date": "2026-02-19",
+    "title": "Microsoft Agent Framework RC 1.0.0rc1 Released",
+    "summary": "The Microsoft Agent Framework reached Release Candidate 1 (1.0.0rc1) for Python and .NET. API is now locked for GA. Breaking changes include updated credentials handling, session management, context propagation, and response interfaces.",
+    "impact": "Teams building production agents should upgrade to RC to test migration paths before GA. API stability means no further breaking changes are expected.",
+    "links": [
+      { "label": "Agent Framework RC Blog Post", "url": "https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/" },
+      { "label": "Agent Framework GitHub", "url": "https://github.com/microsoft/agent-framework" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-23",
+    "title": "GPT-Realtime-1.5 and GPT-Audio-1.5 Available in Foundry",
+    "summary": "Azure OpenAI GPT-Realtime-1.5 and GPT-Audio-1.5 are now available in Foundry. GPT-Realtime-1.5 delivers +7% improvement in instruction following and GPT-Audio-1.5 delivers +10.23% ASR accuracy over prior versions.",
+    "impact": "Substantial quality improvements for voice-enabled agents and real-time transcription workloads built on Azure.",
+    "links": [
+      { "label": "Azure OpenAI What's New", "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/whats-new" },
+      { "label": "Audio Models Overview", "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models?tabs=python-secure%2Cglobal-standard%2Cstandard-audio#audio-models" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-23",
+    "title": "Claude Sonnet 4.6 Available in Azure Foundry Model Catalog",
+    "summary": "Claude Sonnet 4.6 is now available in the Foundry model catalog alongside Opus 4.6. Designed for cost-efficient scale workloads with full 1M token context support.",
+    "impact": "Teams can now pick between Opus 4.6 (highest quality) and Sonnet 4.6 (cost-efficient) within Foundry without switching platforms.",
+    "links": [
+      { "label": "Foundry Model Catalog", "url": "https://ai.azure.com/catalog" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-24",
+    "title": "Foundry Local: Large Model Support for Disconnected / Sovereign Environments",
+    "summary": "Foundry Local now supports large multimodal models for air-gapped, disconnected, or sovereign cloud environments. Enables on-premises AI inference without cloud egress.",
+    "impact": "Critical for government, defense, and regulated industries that cannot send data to public cloud endpoints.",
+    "links": [
+      { "label": "Foundry Local Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-local/overview" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-24",
+    "title": "AI Toolkit for VS Code v0.30.0: Tool Catalog + Agent Inspector with F5 Debugging",
+    "summary": "AI Toolkit for VS Code reached v0.30.0, introducing a centralized Tool Catalog for discovering and managing agent tools, and an Agent Inspector that lets developers debug agents step-by-step using F5 in VS Code.",
+    "impact": "Significantly improves developer productivity for building and debugging Foundry agents locally before deploying to production.",
+    "links": [
+      { "label": "Foundry Toolkit for VS Code (GA)", "url": "https://aka.ms/foundrytk" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-24",
+    "title": "Foundry REST API Generally Available (/openai/v1/* endpoints)",
+    "summary": "The Foundry REST API endpoints under /openai/v1/* are now generally available. Provides a stable, versioned API surface for all Foundry model and agent interactions.",
+    "impact": "GA status means SLA commitments and long-term stability for production integrations. Teams can build confidently without worrying about breaking changes.",
+    "links": [
+      { "label": "Foundry REST API Reference", "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/reference" },
+      { "label": "API Lifecycle & Versioning", "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/api-version-lifecycle" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-24",
+    "title": "Python SDK 2.0.0b4 + .NET SDK 2.0.0-beta.1 Released",
+    "summary": "Python SDK 2.0.0b4 and .NET SDK 2.0.0-beta.1 released for Foundry. Both SDKs integrate openai + azure-identity bundles and expose agents on AIProjectClient.",
+    "impact": "Beta SDKs allow teams to begin integrating Foundry agent capabilities with familiar Azure SDK patterns ahead of GA.",
+    "links": [
+      { "label": "azure-ai-projects on PyPI", "url": "https://pypi.org/project/azure-ai-projects/" },
+      { "label": ".NET SDK Changelog", "url": "https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Projects/CHANGELOG.md" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-25",
+    "title": "Java SDK 2.0.0-beta.1 + JS/TS SDK 2.0.0-beta.4 Released",
+    "summary": "Java SDK 2.0.0-beta.1 and JS/TS SDK 2.0.0-beta.4 released for Foundry. Both follow the same agent-on-AIProjectClient pattern as the Python and .NET betas.",
+    "impact": "Expands Foundry SDK coverage to Java and JavaScript/TypeScript teams, enabling polyglot agent development.",
+    "links": [
+      { "label": "@azure/ai-projects on npm", "url": "https://www.npmjs.com/package/@azure/ai-projects" },
+      { "label": "Java SDK Changelog", "url": "https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/ai/azure-ai-projects/CHANGELOG.md" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-26",
+    "title": "Durable Agent Orchestration with Human-in-the-Loop (Azure Durable Functions + SignalR)",
+    "summary": "Foundry now supports durable agent orchestration with human-in-the-loop checkpoints, built on Azure Durable Functions, Agent Framework, and SignalR. Agents can pause, await human approval, and resume.",
+    "impact": "Enables compliance-critical workflows (legal, financial, medical) where AI must pause for human sign-off before proceeding to the next step.",
+    "links": [
+      { "label": "Durable Agent Orchestration Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/durable-agent-orchestration" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-27",
+    "title": "Grok 4.0 GA + Grok 4.1 Fast Preview in Foundry Catalog",
+    "summary": "xAI Grok 4.0 is now generally available in Foundry at $5.50/$27.50 per MTok. Grok 4.1 Fast is available in preview at $0.20/$0.50 per MTok for high-throughput, lower-cost use cases.",
+    "impact": "Adds a competitive frontier model option to Foundry's multi-model catalog, giving architects more price/performance choices.",
+    "links": [
+      { "label": "Grok Models in Foundry Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=xAI" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "foundry",
+    "date": "2026-02-27",
+    "title": "FLUX.2 Flex Available in Foundry ($0.05/megapixel)",
+    "summary": "Black Forest Labs FLUX.2 Flex image generation model is now available in Foundry at $0.05 per megapixel. Optimized for text-heavy image generation tasks.",
+    "impact": "Enables cost-effective, high-quality image generation with strong text rendering within Azure's secure boundary.",
+    "links": [
+      { "label": "FLUX.2 Flex in Foundry Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=Black+Forest+Labs" },
+      { "label": "Foundry Feb 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/" }
+    ]
+  },
+  {
+    "week": 3,
+    "category": "azureml",
+    "date": "2026-02-18",
+    "title": "AzureML SDK v1 End-of-Life Announced: June 30, 2026",
+    "summary": "Microsoft announced that the AzureML SDK v1 will reach end-of-life on June 30, 2026. The CLI v1 already reached EOL on September 30, 2025. Customers must migrate to SDK v2 and CLI v2.",
+    "impact": "Any production ML pipelines, training jobs, or deployments using SDK v1 will stop working after June 30. Migration planning is urgent for teams with significant v1 codebases.",
+    "links": [
+      { "label": "Migrate to AzureML SDK v2", "url": "https://learn.microsoft.com/en-us/azure/machine-learning/migrate-to-v2-overview" },
+      { "label": "SDK v1 Retirement Announcement", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-dec-2025-jan-2026/" }
+    ]
+  },
+  {
+    "week": 4,
+    "category": "foundry",
+    "date": "2026-03-05",
+    "title": "GPT-5.4 + GPT-5.4 Pro Generally Available in Foundry",
+    "summary": "GPT-5.4 ($2.50/$15 per MTok, 272K context) and GPT-5.4 Pro ($30/$180 per MTok) are now generally available in Foundry. Pro tier targets complex, multi-step reasoning workloads.",
+    "impact": "Teams get access to OpenAI's flagship model within Azure's compliance boundary. The 272K context window enables full-document analysis and complex multi-document tasks.",
+    "links": [
+      { "label": "GPT-5.4 in Foundry Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=OpenAI" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 4,
+    "category": "foundry",
+    "date": "2026-03-06",
+    "title": "Foundry Python SDK 2.0.0 Generally Available",
+    "summary": "The Foundry Python SDK 2.0.0 reached GA. It bundles openai + azure-identity dependencies and exposes all agent operations on AIProjectClient, replacing the prior project client patterns.",
+    "impact": "Stable, production-ready SDK with Microsoft's support SLA. Teams can now commit to long-term SDK integrations with confidence.",
+    "links": [
+      { "label": "azure-ai-projects 2.0.1 on PyPI", "url": "https://pypi.org/project/azure-ai-projects/2.0.1/" },
+      { "label": "Quickstart: Build your first agent", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstart" }
+    ]
+  },
+  {
+    "week": 5,
+    "category": "foundry",
+    "date": "2026-03-09",
+    "title": "Foundry Agent Service Generally Available",
+    "summary": "The Foundry Agent Service reached GA. Built on the Responses API, it supports private networking, Entra RBAC, and managed agent lifecycle. Replaces assistant-based approaches with a more production-hardened service.",
+    "impact": "GA provides SLA-backed agent hosting within Azure. Entra integration and private networking address enterprise security requirements out of the box.",
+    "links": [
+      { "label": "Foundry Agent Service Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview" },
+      { "label": "Agent Service Quickstart", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstart" }
+    ]
+  },
+  {
+    "week": 5,
+    "category": "foundry",
+    "date": "2026-03-09",
+    "title": "Foundry Evaluations GA + Continuous Monitoring",
+    "summary": "Foundry Evaluations reached GA with out-of-box and custom evaluators, plus a new Continuous Monitoring mode that integrates with Azure Monitor for ongoing production quality tracking.",
+    "impact": "Production AI systems can now be continuously evaluated against quality metrics with alerts via Azure Monitor — enabling LLMOps at scale.",
+    "links": [
+      { "label": "Foundry Evaluations Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/evaluation/overview" },
+      { "label": "Built-in Evaluators", "url": "https://learn.microsoft.com/en-us/azure/foundry/evaluation/built-in-evaluators" }
+    ]
+  },
+  {
+    "week": 5,
+    "category": "foundry",
+    "date": "2026-03-09",
+    "title": "Fireworks AI on Foundry Preview (DeepSeek V3.2, Kimi K2.5, MiniMax M2.5, BYOW)",
+    "summary": "Fireworks AI is now available on Foundry in preview, bringing DeepSeek V3.2, gpt-oss-120b, Kimi K2.5, and MiniMax M2.5 to the catalog. Also supports Bring Your Own Weights (BYOW) for custom fine-tuned models.",
+    "impact": "Expands model catalog with open-weight and specialized models. BYOW unlocks custom fine-tuned model deployments within Azure's managed infrastructure.",
+    "links": [
+      { "label": "Fireworks AI Models in Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=Fireworks+AI" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 5,
+    "category": "foundry",
+    "date": "2026-03-12",
+    "title": "Python SDK 2.0.1 Released (Bug Fixes)",
+    "summary": "Foundry Python SDK 2.0.1 released with targeted bug fixes following the 2.0.0 GA. Patch release; no API changes.",
+    "impact": "Recommended upgrade for teams on 2.0.0 to resolve known issues.",
+    "links": [
+      { "label": "azure-ai-projects 2.0.1 on PyPI", "url": "https://pypi.org/project/azure-ai-projects/2.0.1/" }
+    ]
+  },
+  {
+    "week": 5,
+    "category": "claude",
+    "date": "2026-03-13",
+    "title": "Claude 1M Token Context Window Generally Available (Opus 4.6 + Sonnet 4.6)",
+    "summary": "Anthropic's 1M token context window is now generally available for Claude Opus 4.6 and Sonnet 4.6, graduating from beta. Standard rate limits apply; supports up to 600 images or PDFs per request.",
+    "impact": "Unlocks processing of extremely long documents, codebases, and datasets without chunking. The 600-file limit enables large batch document workflows.",
+    "links": [
+      { "label": "1M Context Window Docs", "url": "https://docs.anthropic.com/en/build-with-claude/context-windows" },
+      { "label": "Models Overview & Pricing", "url": "https://docs.anthropic.com/en/about-claude/models/overview" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "foundry",
+    "date": "2026-03-16",
+    "title": "NVIDIA Nemotron Models Available in Foundry (GTC Announcement)",
+    "summary": "NVIDIA Nemotron model family announced for Foundry availability at GTC 2026, targeting enterprise AI infrastructure workloads.",
+    "impact": "Adds GPU-optimized models from NVIDIA to the Foundry catalog, expanding options for enterprise AI infrastructure teams.",
+    "links": [
+      { "label": "NVIDIA Nemotron in Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=NVIDIA" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "foundry",
+    "date": "2026-03-16",
+    "title": "Voice Live + Foundry Agents Preview: Managed STT → LLM → TTS Pipeline",
+    "summary": "Voice Live integration with Foundry Agents is available in preview. Provides a fully managed Speech-to-Text → LLM → Text-to-Speech pipeline, eliminating custom orchestration for voice agents.",
+    "impact": "Dramatically simplifies building production voice agents. Managed pipeline reduces latency tuning and reliability work for voice-first applications.",
+    "links": [
+      { "label": "Voice Live Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/speech-services/voice-live/overview" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "foundry",
+    "date": "2026-03-16",
+    "title": "MCP Authentication Expansion: Key, Entra Agent Identity, Managed Identity, OAuth",
+    "summary": "MCP server authentication in Foundry now supports four auth modes: API key, Entra Agent Identity, Managed Identity, and OAuth passthrough. Teams can match auth to their security posture.",
+    "impact": "Removes the key-only limitation for MCP tool calls, enabling zero-secret, identity-based auth for enterprise agent deployments.",
+    "links": [
+      { "label": "MCP Tool Authentication Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-mcp-tools" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "claude",
+    "date": "2026-03-16",
+    "title": "Extended Thinking Display Field: thinking.display = 'omitted'",
+    "summary": "Anthropic added a new thinking.display field to the API response for extended thinking. When set to 'omitted', the raw thinking tokens are not returned in the response, reducing payload size.",
+    "impact": "Useful for production deployments where thinking transparency is needed for quality but thinking content shouldn't be surfaced in end-user responses or stored in logs.",
+    "links": [
+      { "label": "Controlling Thinking Display", "url": "https://docs.anthropic.com/en/build-with-claude/extended-thinking#controlling-thinking-display" },
+      { "label": "Extended Thinking Docs", "url": "https://docs.anthropic.com/en/build-with-claude/extended-thinking" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "foundry",
+    "date": "2026-03-17",
+    "title": "GPT-5.4 Mini Generally Available in Foundry",
+    "summary": "GPT-5.4 Mini is now generally available in Foundry, optimized for classification, extraction, and lightweight tool-use tasks. Lower cost than full GPT-5.4.",
+    "impact": "Enables cost-effective automation of structured tasks (classification, extraction, routing) at scale without needing the full GPT-5.4 model.",
+    "links": [
+      { "label": "GPT-5.4 Mini in Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=OpenAI" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "claude",
+    "date": "2026-03-18",
+    "title": "Model Capability Fields Added to Models API",
+    "summary": "Anthropic added structured capability metadata to the Models API: max_input_tokens, max_tokens, and a capabilities object. Enables programmatic model selection based on feature requirements.",
+    "impact": "Applications can now dynamically select the right model for a task (by context length, tool support, etc.) without hardcoding model names — important for multi-model architectures.",
+    "links": [
+      { "label": "Models API Reference", "url": "https://docs.anthropic.com/en/api/models/list" },
+      { "label": "Models Overview", "url": "https://docs.anthropic.com/en/about-claude/models/overview" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "github",
+    "date": "2026-03-16",
+    "title": "GitHub Copilot CLI v1.0.6: Autopilot Mode",
+    "summary": "Copilot CLI v1.0.6 introduced autopilot mode, allowing the agent to execute multi-step tasks with less human confirmation. Reduces friction for automated or trusted workflows.",
+    "impact": "Developers can run longer agentic sessions without constant approval prompts, accelerating development tasks.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.6)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v106" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "github",
+    "date": "2026-03-17",
+    "title": "GitHub Copilot CLI v1.0.7: GPT-5.4 Mini Support + Color Contrast Fixes",
+    "summary": "v1.0.7 added GPT-5.4 Mini as a selectable model in Copilot CLI and fixed color contrast accessibility issues in the UI.",
+    "impact": "GPT-5.4 Mini support provides a faster, cheaper option for lighter CLI tasks. Accessibility improvements broaden usability.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.7)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v107" }
+    ]
+  },
+  {
+    "week": 6,
+    "category": "github",
+    "date": "2026-03-18",
+    "title": "GitHub Copilot CLI v1.0.8: Alternate Screen Default",
+    "summary": "v1.0.8 made alternate screen mode the default for Copilot CLI, providing a cleaner terminal experience that doesn't pollute the scrollback buffer.",
+    "impact": "Improved UX for users running Copilot CLI in standard terminal sessions.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.8)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v108" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "foundry",
+    "date": "2026-03-23",
+    "title": "JS/TS SDK 2.0.0 GA + Java SDK 2.0.0 GA",
+    "summary": "Foundry JavaScript/TypeScript SDK 2.0.0 and Java SDK 2.0.0 both reached general availability, completing the GA rollout across all four major language SDKs.",
+    "impact": "All major language SDKs (Python, .NET, JS/TS, Java) are now GA, enabling production-grade Foundry integrations across the full enterprise tech stack.",
+    "links": [
+      { "label": "@azure/ai-projects on npm", "url": "https://www.npmjs.com/package/@azure/ai-projects" },
+      { "label": "Java SDK Changelog", "url": "https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/ai/azure-ai-projects/CHANGELOG.md" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "foundry",
+    "date": "2026-03-23",
+    "title": "Palo Alto Prisma AIRS + Zenity GA: Prompt Injection & Data Leakage Detection",
+    "summary": "Palo Alto Prisma AIRS and Zenity integrations are now generally available in Foundry, providing real-time prompt injection detection and data leakage prevention for agent workloads.",
+    "impact": "Addresses a critical enterprise blocker for production agent deployment: adversarial prompt attacks and data exfiltration. Positions Foundry as enterprise-ready from a security posture.",
+    "links": [
+      { "label": "Foundry Guardrails Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/overview" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "foundry",
+    "date": "2026-03-23",
+    "title": "Tracing GA + End-to-End Private Networking for Agents",
+    "summary": "Foundry Tracing reached GA with full OpenTelemetry support. End-to-end private networking for agent workloads is also now available, enabling agents to call tools and APIs without public internet exposure.",
+    "impact": "Tracing GA enables production-grade observability for agent debugging and auditing. Private networking unlocks deployment in network-isolated environments.",
+    "links": [
+      { "label": "Trace Your Application (Foundry)", "url": "https://learn.microsoft.com/en-us/azure/foundry/trace-your-application" },
+      { "label": "Private Networking for Agents", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/configure-private-networking" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "foundry",
+    "date": "2026-03-23",
+    "title": "PromptFlow Deprecation: Migrate to Agent Framework Workflows by April 20, 2027",
+    "summary": "Microsoft announced PromptFlow deprecation. Customers must migrate to Agent Framework Workflows by April 20, 2027. Documentation and migration guides available.",
+    "impact": "Teams with PromptFlow investments need to plan migration now. One-year runway is provided, but the sooner migration begins, the less technical debt accumulates.",
+    "links": [
+      { "label": "Microsoft Agent Framework Docs", "url": "https://learn.microsoft.com/en-us/agent-framework" },
+      { "label": "PromptFlow Migration Guide", "url": "https://learn.microsoft.com/en-us/azure/machine-learning/how-to-migrate-to-agent-framework" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "github",
+    "date": "2026-03-19",
+    "title": "GitHub Copilot CLI v1.0.9–v1.0.10: Monorepo Support + /session Rename",
+    "summary": "v1.0.9-1.0.10 introduced monorepo project support for multi-package repositories, and the /session command was renamed for clarity.",
+    "impact": "Monorepo support is significant for large enterprise codebases. CLI can now correctly understand and navigate multi-package repository structures.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.9–10)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1010" }
+    ]
+  },
+  {
+    "week": 7,
+    "category": "github",
+    "date": "2026-03-24",
+    "title": "GitHub Copilot CLI v1.0.11–v1.0.12: Model Picker Full-Screen + Monorepo Refinements",
+    "summary": "v1.0.12 introduced a full-screen model picker UI for easier model selection. v1.0.11 refined monorepo support with additional project detection heuristics.",
+    "impact": "Full-screen model picker reduces friction for users who frequently switch models across different task types.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.12)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1012" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "foundry",
+    "date": "2026-03-30",
+    "title": "Grok 4.2 Generally Available in Foundry",
+    "summary": "xAI Grok 4.2 reached general availability in the Foundry model catalog, succeeding Grok 4.0 with quality and capability improvements.",
+    "impact": "Customers using Grok in Foundry should evaluate upgrading to 4.2 for improved performance on reasoning and instruction-following tasks.",
+    "links": [
+      { "label": "Grok Models in Foundry Catalog", "url": "https://ai.azure.com/catalog?selectedCollection=xAI" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "foundry",
+    "date": "2026-03-30",
+    "title": "Priority Processing Preview: Dedicated Compute Lane for Latency-Sensitive Workloads",
+    "summary": "Foundry introduced Priority Processing in preview: a dedicated compute lane that provides lower, more predictable latency for mission-critical agent workloads.",
+    "impact": "Addresses a key enterprise concern around P99 latency spikes in shared compute. Enables SLA-backed latency commitments for customer-facing AI features.",
+    "links": [
+      { "label": "Priority Processing Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/prioritized-processing" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "claude",
+    "date": "2026-03-30",
+    "title": "Claude Batch API: 300K max_tokens + 1M Beta Retiring April 30",
+    "summary": "The Claude Batch API now supports up to 300K max_tokens per request for Opus 4.6 and Sonnet 4.6. The 1M token beta for Sonnet 4.5 and Sonnet 4 is retiring April 30, 2026.",
+    "impact": "300K batch limit enables very long document processing in async batch jobs. Teams using 1M beta on older models must migrate to 4.6 models before April 30.",
+    "links": [
+      { "label": "Batch API – Extended Output Beta", "url": "https://docs.anthropic.com/en/build-with-claude/batch-processing#extended-output-beta" },
+      { "label": "Context Windows Docs", "url": "https://docs.anthropic.com/en/build-with-claude/context-windows" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "github",
+    "date": "2026-03-30",
+    "title": "GitHub Copilot CLI v1.0.13: /rewind Timeline Picker",
+    "summary": "v1.0.13 introduced the /rewind command with a visual timeline picker, enabling developers to revert to any prior conversation state in the session.",
+    "impact": "Reduces the cost of mistakes during long agentic sessions — developers can safely explore and revert rather than starting over.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.13)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1013" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "github",
+    "date": "2026-04-01",
+    "title": "GitHub Copilot CLI v1.0.14–v1.0.16: PermissionRequest Hook + Startup Performance",
+    "summary": "v1.0.16 added a PermissionRequest hook enabling external scripts to automate permission decisions. v1.0.14-1.0.15 improved startup performance via V8 compile cache.",
+    "impact": "PermissionRequest hook enables CI/CD integration for automated agent workflows. Startup perf improvements reduce friction for frequent CLI invocations.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.16)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1016" }
+    ]
+  },
+  {
+    "week": 8,
+    "category": "github",
+    "date": "2026-04-04",
+    "title": "GitHub Copilot CLI v1.0.17–v1.0.18: Critic Agent",
+    "summary": "v1.0.18 introduced the Critic agent, a secondary agent that reviews and critiques the primary agent's work before output is finalized. Improves output quality for complex tasks.",
+    "impact": "Critic agent provides automatic self-review for high-stakes tasks like code generation and analysis, reducing errors without requiring additional user prompting.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.18)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1018" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "foundry",
+    "date": "2026-04-01",
+    "title": ".NET SDK 2.0.0 Generally Available",
+    "summary": "The Foundry .NET SDK 2.0.0 reached general availability, completing the GA rollout across all four major language SDKs (following Python, JS/TS, and Java).",
+    "impact": ".NET developers now have a stable, SLA-backed SDK for Foundry integrations, supporting enterprise .NET and Azure Functions workloads.",
+    "links": [
+      { "label": "Azure.AI.Projects .NET Changelog", "url": "https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Projects/CHANGELOG.md" },
+      { "label": "NuGet Package", "url": "https://www.nuget.org/packages/Azure.AI.Projects" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "foundry",
+    "date": "2026-04-01",
+    "title": "Fast Transcription: Extended to Support Up to 5-Hour Audio Files",
+    "summary": "Foundry Fast Transcription now supports audio files up to 5 hours in length, up from the prior 2-hour limit.",
+    "impact": "Enables processing of long-form audio (meetings, lectures, interviews) without chunking, simplifying transcription pipelines.",
+    "links": [
+      { "label": "Fast Transcription Docs", "url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/fast-transcription-create" },
+      { "label": "Foundry March 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "claude",
+    "date": "2026-04-07",
+    "title": "Claude Mythos Preview: Cybersecurity-Specialized Model (Project Glasswing)",
+    "summary": "Anthropic launched Claude Mythos in invite-only preview via Project Glasswing — a Claude variant specialized for cybersecurity tasks including vulnerability analysis, threat modeling, and exploit research.",
+    "impact": "Significant for security teams: a frontier model tuned for security reasoning. Invite-only status means early access is strategic; organizations should request access now.",
+    "links": [
+      { "label": "Project Glasswing / Claude Mythos", "url": "https://anthropic.com/glasswing" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "claude",
+    "date": "2026-04-08",
+    "title": "Claude Managed Agents Public Beta + ant CLI Launch",
+    "summary": "Claude Managed Agents entered public beta (use managed-agents-2026-04-01 header). The ant CLI companion tool also launched, providing a command-line interface for managing Claude agents.",
+    "impact": "Managed Agents simplify agentic infrastructure — Anthropic handles orchestration, state, and tool execution. The ant CLI enables DevOps-style agent management.",
+    "links": [
+      { "label": "Claude Managed Agents Overview", "url": "https://docs.anthropic.com/en/managed-agents/overview" },
+      { "label": "ant CLI Reference", "url": "https://docs.anthropic.com/en/api/sdks/cli" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "claude",
+    "date": "2026-04-09",
+    "title": "Claude Advisor Tool Public Beta: Dual-Model Architecture",
+    "summary": "Anthropic's Advisor tool entered public beta (advisor-tool-2026-03-01 header). Enables a dual-model pattern where one Claude instance advises or critiques another agent's work.",
+    "impact": "Enables multi-agent quality control patterns without additional infrastructure. Critical for high-stakes automated workflows where output verification is required.",
+    "links": [
+      { "label": "Advisor Tool Docs", "url": "https://docs.anthropic.com/en/agents-and-tools/tool-use/advisor-tool" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "github",
+    "date": "2026-04-06",
+    "title": "GitHub Copilot CLI v1.0.19: OpenTelemetry Monitoring",
+    "summary": "v1.0.19 added OpenTelemetry (OTel) monitoring support, allowing organizations to collect and export CLI agent traces to their observability stack.",
+    "impact": "Enterprise teams can now integrate Copilot CLI activity into their existing OTel-based observability infrastructure for auditing and performance analysis.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.19)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1019" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "github",
+    "date": "2026-04-07",
+    "title": "GitHub Copilot CLI v1.0.20–v1.0.21: copilot mcp Command",
+    "summary": "v1.0.21 added the 'copilot mcp' command for managing MCP (Model Context Protocol) server connections directly from the CLI. v1.0.20 included related stability fixes.",
+    "impact": "MCP management from the CLI enables DevOps-style tool server management. Developers can add, remove, and inspect MCP connections without editing config files.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.21)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1021" }
+    ]
+  },
+  {
+    "week": 9,
+    "category": "github",
+    "date": "2026-04-09",
+    "title": "GitHub Copilot CLI v1.0.22: Sub-Agent Depth Limits + MCP Tool JSON Sanitization",
+    "summary": "v1.0.22 introduced sub-agent depth limits to prevent infinite agent recursion, and added MCP tool response JSON sanitization to prevent injection attacks.",
+    "impact": "Sub-agent depth limits improve reliability for complex agentic tasks. JSON sanitization addresses a security concern for MCP tool integrations.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.22)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1022" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "foundry",
+    "date": "2026-04-16",
+    "title": "Fine-Tuning: Global Training for o4-mini (13 Regions) + GPT-4.1 as Model Graders",
+    "summary": "Foundry Fine-Tuning now supports Global Training for o4-mini across 13 Azure regions, with lower per-step rates. GPT-4.1, GPT-4.1 mini, and GPT-4.1 nano are now available as model graders in RFT. RFT best practices guide published.",
+    "impact": "Wider regional availability and lower cost for o4-mini fine-tuning unlocks RFT for more teams. GPT-4.1 graders improve feedback quality for reinforcement learning loops.",
+    "links": [
+      { "label": "Foundry Fine-Tuning April 2026 Blog", "url": "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-finetune-april-2026/" },
+      { "label": "Fine-Tuning Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/fine-tuning/overview" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "foundry",
+    "date": "2026-04-16",
+    "title": "Task Adherence + Tool-Call Guardrails Added as Native Guardrail Types",
+    "summary": "Foundry now includes Task Adherence and Tool-Call Guardrails as native guardrail types, enabling enforcement of agent behavior boundaries without custom code.",
+    "impact": "Native guardrails reduce the engineering effort to build safe agents. Task adherence prevents scope creep; tool-call guardrails prevent unauthorized tool invocations.",
+    "links": [
+      { "label": "Task Adherence Guardrail Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/task-adherence?pivots=programming-language-foundry-portal" },
+      { "label": "Tool-Call Guardrails Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/tool-call-guardrails" },
+      { "label": "Foundry Guardrails Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/overview" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "claude",
+    "date": "2026-04-14",
+    "title": "Claude Sonnet 4 + Claude Opus 4 Deprecated (Retiring June 15, 2026)",
+    "summary": "Anthropic deprecated Claude Sonnet 4 and Opus 4 (non-4.6 versions). Both will be retired and return errors after June 15, 2026. Customers should migrate to Sonnet 4.6 and Opus 4.6.",
+    "impact": "Applications using deprecated model versions will break on June 15. Urgent migration needed for production systems; ~60-day runway.",
+    "links": [
+      { "label": "Model Deprecations", "url": "https://docs.anthropic.com/en/about-claude/model-deprecations" },
+      { "label": "Latest Models Comparison", "url": "https://docs.anthropic.com/en/about-claude/models/overview#latest-models-comparison" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "claude",
+    "date": "2026-04-16",
+    "title": "Claude Opus 4.7 Generally Available ($5/$25 per MTok)",
+    "summary": "Claude Opus 4.7 reached GA at the same price point as Opus 4.6 ($5/$25 per MTok). Note: Opus 4.7 has breaking API changes vs 4.6 in extended thinking response format. Also available on Amazon Bedrock in 27 regions.",
+    "impact": "Free quality upgrade at the same price, but migration requires API compatibility testing due to breaking changes. Bedrock availability expands deployment options for AWS-first teams.",
+    "links": [
+      { "label": "Claude Opus 4.7 Announcement", "url": "https://www.anthropic.com/news/claude-opus-4-7" },
+      { "label": "What's New in Claude Opus 4.7", "url": "https://docs.anthropic.com/en/about-claude/models/whats-new-claude-4-7" },
+      { "label": "Migration Guide to Opus 4.7", "url": "https://docs.anthropic.com/en/about-claude/models/migration-guide#migrating-to-claude-opus-4-7" },
+      { "label": "Claude in Amazon Bedrock", "url": "https://docs.anthropic.com/en/build-with-claude/claude-in-amazon-bedrock" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "github",
+    "date": "2026-04-13",
+    "title": "GitHub Copilot CLI v1.0.25: MCP Registry Install + Remote Control",
+    "summary": "v1.0.25 added the ability to install MCP servers directly from the MCP registry with a single command, and introduced remote control capabilities allowing external processes to programmatically control the CLI.",
+    "impact": "Registry-based MCP install dramatically simplifies tool server setup. Remote control enables integration with IDEs, CI systems, and custom workflows.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.25)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1025" }
+    ]
+  },
+  {
+    "week": 10,
+    "category": "github",
+    "date": "2026-04-17",
+    "title": "GitHub Copilot CLI v1.0.32: Auto Model + Document Attachments + Rate-Limit Auto-Retry",
+    "summary": "v1.0.32 added auto model selection (CLI picks best model for the task), document file attachment support, and automatic retry with backoff on rate-limit responses.",
+    "impact": "Auto model reduces cognitive overhead of model selection. Document attachments enable richer context. Rate-limit retry improves reliability in high-usage environments.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.32)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1032" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-20",
+    "title": "Microsoft Agent Framework v1.0 Generally Available (Python + .NET)",
+    "summary": "Microsoft Agent Framework v1.0 reached GA for Python and .NET. The framework unifies Semantic Kernel and AutoGen under one API and supports multi-model backends: Azure OpenAI, Anthropic, Gemini, Amazon Bedrock, and Ollama.",
+    "impact": "GA status with multi-model support means teams can build production agents once and swap model backends without code changes. Unifying SK and AutoGen reduces fragmentation in Microsoft's agentic ecosystem.",
+    "links": [
+      { "label": "Agent Framework v1.0 GA Blog", "url": "https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/" },
+      { "label": "Agent Framework GitHub", "url": "https://github.com/microsoft/agent-framework" },
+      { "label": "Migration Guides (SK + AutoGen)", "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-22",
+    "title": "Foundry Toolkit for VS Code Generally Available (Formerly AI Toolkit)",
+    "summary": "AI Toolkit for VS Code has been renamed and rebranded as Foundry Toolkit for VS Code and reached GA. Consolidates agent development, model testing, and deployment tooling in a single VS Code extension.",
+    "impact": "GA tooling with unified branding signals long-term investment. Developers get a stable, production-ready local development experience for Foundry agents.",
+    "links": [
+      { "label": "Foundry Toolkit for VS Code", "url": "https://aka.ms/foundrytk" },
+      { "label": "Foundry Toolkit GA Blog", "url": "https://techcommunity.microsoft.com/blog/azuredevcommunityblog/microsoft-foundry-toolkit-for-vs-code-is-now-generally-available/4511831" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-22",
+    "title": "Toolbox in Foundry Public Preview: Centralized Tool Management + Single MCP Endpoint",
+    "summary": "Toolbox entered public preview in Foundry, providing a centralized tool catalog with a single MCP endpoint. Teams manage all agent tools from one place rather than configuring individual MCP servers per agent.",
+    "impact": "Eliminates MCP server sprawl for large agent deployments. A single endpoint simplifies networking, auth, and governance for tool access across all agents.",
+    "links": [
+      { "label": "Toolbox in Foundry Docs", "url": "https://aka.ms/foundry-toolbox-pupr" },
+      { "label": "Toolbox Blog Post", "url": "https://devblogs.microsoft.com/foundry/introducing-toolboxes-in-foundry/" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-22",
+    "title": "New Hosted Agents in Foundry Agent Service Preview: Secure Sandbox with Filesystem + Code Exec",
+    "summary": "Foundry Agent Service now offers Hosted Agents in preview: a secure sandbox environment where agents can use a persistent filesystem and execute code, managed entirely by Azure.",
+    "impact": "Removes the need for customers to provision and secure their own compute for code-executing agents. Azure manages isolation, scaling, and security for hosted agent sandboxes.",
+    "links": [
+      { "label": "Hosted Agents Docs", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/hosted-agents" },
+      { "label": "Hosted Agents Blog Post", "url": "https://devblogs.microsoft.com/foundry/introducing-the-new-hosted-agents-in-foundry-agent-service-secure-scalable-compute-built-for-agents/" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-22",
+    "title": "Memory in Foundry Agent Service: LangGraph Integration + CRUD API (Billing June 1)",
+    "summary": "Foundry Memory for agents now integrates with LangGraph for stateful workflows, adds a full CRUD API for memory management, and supports custom userId scoping. Billing begins June 1, 2026 at $0.25 per 1,000 events.",
+    "impact": "Stateful agents with managed memory are now production-ready. LangGraph integration enables complex workflow state machines. Teams should account for memory billing starting June 1.",
+    "links": [
+      { "label": "Memory in Foundry Agent Service", "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-memory?view=foundry&tabs=conversational-agent" },
+      { "label": "Agent Framework v1.0 GA Blog", "url": "https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "foundry",
+    "date": "2026-04-22",
+    "title": "Foundry Observability Generally Available: End-to-End Tracing + ARM API Governance",
+    "summary": "Foundry Observability reached GA with end-to-end agent tracing, Azure Resource Manager (ARM) API governance, and full integration with Azure Monitor.",
+    "impact": "GA observability enables production LLMOps: trace every agent interaction, enforce governance policies, and alert on quality or latency regressions via Azure Monitor.",
+    "links": [
+      { "label": "Foundry Observability Overview", "url": "https://learn.microsoft.com/en-us/azure/foundry/observability/overview" },
+      { "label": "Trace Your Application", "url": "https://learn.microsoft.com/en-us/azure/foundry/trace-your-application" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "claude",
+    "date": "2026-04-20",
+    "title": "Claude Haiku 3 Retired (All API Requests Now Return Errors)",
+    "summary": "Claude Haiku 3 has been retired from the Anthropic API. All requests to the haiku-3 model now return an error. Teams should migrate to Haiku 3.5 or Sonnet 4.6.",
+    "impact": "Production systems using Haiku 3 are now broken. Immediate migration required. Haiku 3.5 is the recommended replacement for cost-sensitive workloads.",
+    "links": [
+      { "label": "Latest Models Comparison", "url": "https://docs.anthropic.com/en/about-claude/models/overview#latest-models-comparison" },
+      { "label": "Model Deprecations", "url": "https://docs.anthropic.com/en/about-claude/model-deprecations" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "claude",
+    "date": "2026-04-23",
+    "title": "Memory for Claude Managed Agents Public Beta",
+    "summary": "Anthropic launched Memory for Claude Managed Agents in public beta. Agents can now store and retrieve information across sessions without custom memory implementations.",
+    "impact": "Eliminates the need for custom vector DB or memory layer implementations for Claude-based agents. Significantly reduces infrastructure complexity for stateful agent deployments.",
+    "links": [
+      { "label": "Agent Memory Docs", "url": "https://docs.anthropic.com/en/managed-agents/memory" },
+      { "label": "Managed Agents Overview", "url": "https://docs.anthropic.com/en/managed-agents/overview" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "claude",
+    "date": "2026-04-24",
+    "title": "Rate Limits API: Programmatic Quota Management for Claude",
+    "summary": "Anthropic launched a Rate Limits API, enabling organizations to programmatically query, configure, and manage their Claude API rate limits without contacting support.",
+    "impact": "Enables dynamic quota management for large orgs with multiple teams or environments. Reduces operational friction for enterprises managing Claude at scale.",
+    "links": [
+      { "label": "Rate Limits API Docs", "url": "https://docs.anthropic.com/en/build-with-claude/rate-limits-api" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "github",
+    "date": "2026-04-20",
+    "title": "GitHub Copilot CLI v1.0.33–v1.0.34: Vim Navigation + Slash Command Typo Correction",
+    "summary": "v1.0.33-1.0.34 added vim-style j/k key navigation in list views and automatic typo correction for slash commands (e.g., '/compct' → '/compact').",
+    "impact": "Vim navigation improves ergonomics for keyboard-centric developers. Typo correction reduces friction for users who mistype command names.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.34)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1034" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "github",
+    "date": "2026-04-22",
+    "title": "GitHub Copilot CLI v1.0.35: Tab-Completion for Command Arguments",
+    "summary": "v1.0.35 added tab-completion support for command arguments, not just top-level commands. Users can now tab-complete file paths, model names, and other argument values.",
+    "impact": "Significantly improves CLI discoverability and speed for power users. Reduces errors from mistyped file paths or model names.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.35)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1035" }
+    ]
+  },
+  {
+    "week": 11,
+    "category": "github",
+    "date": "2026-04-24",
+    "title": "GitHub Copilot CLI v1.0.36: Location-Based Permission Persistence + Claude Opus 4.7 Default",
+    "summary": "v1.0.36 made location-based permission persistence the default (CLI remembers permissions per directory). Claude Opus 4.7 is now the default model for medium-effort tasks.",
+    "impact": "Permission persistence reduces repetitive approval prompts for trusted project directories. Opus 4.7 as default ensures better output quality for moderate-complexity tasks.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.36)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1036" }
+    ]
+  },
+  {
+    "week": 12,
+    "category": "github",
+    "date": "2026-04-27",
+    "title": "GitHub Copilot CLI v1.0.37: Shell Completion Scripts (bash / zsh / fish)",
+    "summary": "v1.0.37 added shell completion script generation for bash, zsh, and fish shells via 'copilot completion'. Install once for persistent tab-completion in your shell.",
+    "impact": "Native shell completion dramatically improves CLI usability for daily drivers across all major shells. One-time setup, permanent productivity benefit.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.37)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1037" }
+    ]
+  },
+  {
+    "week": 12,
+    "category": "github",
+    "date": "2026-04-27",
+    "title": "GitHub Copilot CLI v1.0.38: /compact /context /usage /env Commands for ACP",
+    "summary": "v1.0.38 added /compact, /context, /usage, and /env slash commands for the Agent Control Panel (ACP), giving users more runtime control over agent behavior and resource usage.",
+    "impact": "ACP commands enable in-session control of agent context and resource consumption, important for long-running sessions and cost management.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.38)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1038" }
+    ]
+  },
+  {
+    "week": 12,
+    "category": "github",
+    "date": "2026-04-28",
+    "title": "GitHub Copilot CLI v1.0.39: Ctrl+X → B Background Task Execution",
+    "summary": "v1.0.39 added Ctrl+X → B keyboard shortcut to send the current agent task to the background, freeing the terminal for other work while the agent continues running.",
+    "impact": "Background task execution enables true multitasking for long agentic tasks. Users can start a complex task and immediately return to other work.",
+    "links": [
+      { "label": "Copilot CLI Changelog (v1.0.39)", "url": "https://github.com/github/copilot-cli/blob/main/changelog.md#v1039" }
+    ]
+  }
+]

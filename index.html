@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Foundry / Model Change Log Summary</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!--
+    DATA SOURCE: updates.json
+    Serve this directory with a local HTTP server to load live data, e.g.:
+      python -m http.server 8080
+      npx serve .
+    Opening index.html directly as a file:// URL will fall back to embedded empty data.
+  -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── CSS Custom Properties ── */
+    :root {
+      --page-bg: linear-gradient(140deg, #d0dae8 0%, #f4f6f9 30%, #ffffff 55%, #e8ecf2 80%, #d8e0ec 100%);
+      --header-bg: #ffffff;
+      --header-border: #e2e8f0;
+      --header-shadow: rgba(0,0,0,.07);
+      --header-h1: #0f172a;
+      --header-sub: #94a3b8;
+      --chart-bg: #ffffff;
+      --chart-shadow: rgba(0,0,0,.06);
+      --chart-grid: #f1f5f9;
+      --chart-label: #475569;
+      --chart-tip: #94a3b8;
+      --chart-legend-border: #f1f5f9;
+      --legend-text: #475569;
+      --legend-hover: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --card-backdrop: none;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --text-xmuted: #94a3b8;
+      --section-label: #94a3b8;
+      --badge-bg: #f1f5f9;
+      --badge-border: #e2e8f0;
+      --badge-color: #94a3b8;
+      --month-border: #e2e8f0;
+      --month-count-bg: #f1f5f9;
+      --month-count-color: #64748b;
+      --impact-bg: #fff7ed;
+      --impact-border: #fed7aa;
+      --impact-label: #c2410c;
+      --impact-text: #7c2d12;
+      --pill-bg: #eff6ff;
+      --pill-border: #bfdbfe;
+      --pill-color: #0078d4;
+      --pill-hover-bg: #dbeafe;
+      --pill-hover-border: #93c5fd;
+      --filter-bg: #f8fafc;
+      --filter-border: #e2e8f0;
+      --filter-color: #1e293b;
+      --filter-label: #64748b;
+      --filter-reset: #0078d4;
+      --filter-reset-hover: #eff6ff;
+      --flash-bg: #fef9c3;
+    }
+
+    /* Aurora: rich purple → magenta → rose gradient */
+    [data-theme="aurora"] {
+      --page-bg: linear-gradient(135deg, #1e0a38 0%, #3b1066 38%, #7a1f5d 68%, #c03458 100%);
+      --header-bg: rgba(18,4,42,0.82);
+      --header-border: rgba(180,100,255,0.2);
+      --header-shadow: rgba(0,0,0,.35);
+      --header-h1: #f0e4ff;
+      --header-sub: #a87cd4;
+      --chart-bg: rgba(28,8,62,0.55);
+      --chart-shadow: rgba(0,0,0,.25);
+      --chart-grid: rgba(255,255,255,0.05);
+      --chart-label: #c8a8f0;
+      --chart-tip: #9070b8;
+      --chart-legend-border: rgba(255,255,255,0.08);
+      --legend-text: #d0b0f0;
+      --legend-hover: rgba(255,255,255,0.08);
+      --card-bg: rgba(36,10,74,0.6);
+      --card-border: rgba(180,100,255,0.18);
+      --card-backdrop: blur(10px);
+      --text-primary: #f0e6ff;
+      --text-secondary: #cdb0ec;
+      --text-muted: #a880cc;
+      --text-xmuted: #8060a8;
+      --section-label: #9870be;
+      --badge-bg: rgba(120,60,200,0.2);
+      --badge-border: rgba(180,120,255,0.3);
+      --badge-color: #b898f0;
+      --month-border: rgba(180,120,255,0.22);
+      --month-count-bg: rgba(120,60,200,0.2);
+      --month-count-color: #c0a0e8;
+      --impact-bg: rgba(200,70,20,0.15);
+      --impact-border: rgba(255,150,80,0.28);
+      --impact-label: #ff9966;
+      --impact-text: #ffcc9a;
+      --pill-bg: rgba(100,60,200,0.2);
+      --pill-border: rgba(150,100,255,0.38);
+      --pill-color: #c8a8ff;
+      --pill-hover-bg: rgba(120,80,240,0.32);
+      --pill-hover-border: rgba(180,130,255,0.55);
+      --filter-bg: rgba(36,10,74,0.55);
+      --filter-border: rgba(180,100,255,0.3);
+      --filter-color: #e8d8ff;
+      --filter-label: #a878d0;
+      --filter-reset: #c8a0ff;
+      --filter-reset-hover: rgba(180,120,255,0.15);
+      --flash-bg: rgba(200,150,255,0.28);
+    }
+
+    /* Abyss: true black → rich navy → near-black */
+    [data-theme="dark"] {
+      --page-bg: linear-gradient(135deg, #000000 0%, #0c0e28 30%, #121038 52%, #080810 75%, #000000 100%);
+      --header-bg: rgba(6,13,31,0.94);
+      --header-border: rgba(255,255,255,0.08);
+      --header-shadow: rgba(0,0,0,.5);
+      --header-h1: #ddeeff;
+      --header-sub: #4a6080;
+      --chart-bg: #0b1730;
+      --chart-shadow: rgba(0,0,0,.4);
+      --chart-grid: rgba(255,255,255,0.05);
+      --chart-label: #4a6890;
+      --chart-tip: #3a5070;
+      --chart-legend-border: rgba(255,255,255,0.07);
+      --legend-text: #6080a8;
+      --legend-hover: rgba(255,255,255,0.06);
+      --card-bg: #0d1b35;
+      --card-border: rgba(255,255,255,0.07);
+      --card-backdrop: none;
+      --text-primary: #e2eaf8;
+      --text-secondary: #90a8c8;
+      --text-muted: #5878a0;
+      --text-xmuted: #3a5070;
+      --section-label: #3a5878;
+      --badge-bg: rgba(255,255,255,0.06);
+      --badge-border: rgba(255,255,255,0.1);
+      --badge-color: #4a6888;
+      --month-border: rgba(255,255,255,0.09);
+      --month-count-bg: rgba(255,255,255,0.06);
+      --month-count-color: #4a6888;
+      --impact-bg: rgba(180,80,20,0.12);
+      --impact-border: rgba(255,140,60,0.2);
+      --impact-label: #ff8844;
+      --impact-text: #ffaa70;
+      --pill-bg: rgba(0,90,180,0.15);
+      --pill-border: rgba(0,150,255,0.22);
+      --pill-color: #5aabff;
+      --pill-hover-bg: rgba(0,110,220,0.25);
+      --pill-hover-border: rgba(0,170,255,0.4);
+      --filter-bg: #0a1525;
+      --filter-border: rgba(255,255,255,0.1);
+      --filter-color: #c0d8ff;
+      --filter-label: #4a6080;
+      --filter-reset: #5aabff;
+      --filter-reset-hover: rgba(0,120,220,0.15);
+      --flash-bg: rgba(50,100,200,0.28);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--page-bg);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: color .3s;
+    }
+
+    /* ── Sticky header ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--header-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--header-border);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 1px 6px var(--header-shadow);
+      transition: background .4s, border-color .3s, box-shadow .3s;
+    }
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--header-h1);
+      white-space: nowrap;
+      letter-spacing: -.01em;
+      transition: color .3s;
+    }
+    .header-sub {
+      font-size: .78rem;
+      color: var(--header-sub);
+      white-space: nowrap;
+      transition: color .3s;
+    }
+
+    /* ── Filter & Theme controls ── */
+    .filter-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+    .filter-label {
+      font-size: .82rem;
+      color: var(--filter-label);
+      white-space: nowrap;
+      transition: color .3s;
+    }
+    .filter-divider {
+      width: 1px;
+      height: 22px;
+      background: var(--header-border);
+      flex-shrink: 0;
+      transition: background .3s;
+    }
+    .filter-select-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .filter-swatch {
+      position: absolute;
+      left: 10px;
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 1;
+      flex-shrink: 0;
+      transition: background .15s;
+    }
+    #category-filter, #theme-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--filter-bg);
+      border: 1px solid var(--filter-border);
+      border-radius: 8px;
+      padding: 7px 30px 7px 32px;
+      font-size: .875rem;
+      color: var(--filter-color);
+      cursor: pointer;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s, background .3s, color .3s;
+      min-width: 160px;
+    }
+    #category-filter:focus, #theme-select:focus {
+      border-color: #0078d4;
+      box-shadow: 0 0 0 3px rgba(0,120,212,0.15);
+    }
+    .filter-chevron {
+      position: absolute;
+      right: 9px;
+      font-size: .65rem;
+      color: var(--text-xmuted);
+      pointer-events: none;
+      transition: color .3s;
+    }
+    .filter-reset {
+      font-size: .78rem;
+      color: var(--filter-reset);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .15s, color .3s;
+    }
+    .filter-reset.visible { opacity: 1; pointer-events: all; }
+    .filter-reset:hover { background: var(--filter-reset-hover); }
+
+    /* ── Chart section ── */
+    .chart-section {
+      background: var(--chart-bg);
+      backdrop-filter: var(--card-backdrop);
+      -webkit-backdrop-filter: var(--card-backdrop);
+      border: 1px solid var(--card-border);
+      margin: 20px 28px 0;
+      border-radius: 12px;
+      padding: 22px 24px 16px;
+      box-shadow: 0 1px 4px var(--chart-shadow);
+      transition: background .4s, border-color .3s, box-shadow .3s;
+    }
+    .chart-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .chart-header h2 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--chart-label);
+      transition: color .3s;
+    }
+    .chart-tip {
+      font-size: .75rem;
+      color: var(--chart-tip);
+      transition: color .3s;
+    }
+    .chart-wrapper {
+      position: relative;
+      height: 210px;
+    }
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--chart-legend-border);
+      transition: border-color .3s;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .78rem;
+      color: var(--legend-text);
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 2px 6px;
+      transition: background .1s, color .3s;
+    }
+    .legend-item:hover { background: var(--legend-hover); }
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── Content area ── */
+    .content-area { padding: 20px 28px 60px; }
+
+    /* ── Month ── */
+    .month-section { margin-bottom: 44px; }
+    .month-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--month-border);
+      transition: border-color .3s;
+    }
+    .month-header h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -.02em;
+      transition: color .3s;
+    }
+    .month-count {
+      font-size: .75rem;
+      background: var(--month-count-bg);
+      color: var(--month-count-color);
+      border: 1px solid var(--badge-border);
+      border-radius: 20px;
+      padding: 2px 10px;
+      transition: background .3s, color .3s, border-color .3s;
+    }
+
+    /* ── Week ── */
+    .week-section { margin-bottom: 28px; scroll-margin-top: 72px; }
+    .week-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .week-header h3 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color .3s;
+    }
+    .week-badge {
+      font-size: .72rem;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-color);
+      border-radius: 4px;
+      padding: 1px 7px;
+      transition: background .3s, color .3s, border-color .3s;
+    }
+
+    /* ── Cards ── */
+    .updates-grid { display: grid; gap: 12px; }
+    .update-card {
+      background: var(--card-bg);
+      backdrop-filter: var(--card-backdrop);
+      -webkit-backdrop-filter: var(--card-backdrop);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid transparent;
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: box-shadow .15s, transform .1s, background .4s, border-color .3s;
+    }
+    .update-card:hover {
+      box-shadow: 0 4px 16px var(--header-shadow);
+      transform: translateY(-1px);
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: .95rem;
+      font-weight: 650;
+      color: var(--text-primary);
+      line-height: 1.4;
+      transition: color .3s;
+    }
+    .cat-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .7rem;
+      font-weight: 700;
+      border-radius: 5px;
+      padding: 3px 9px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: .02em;
+    }
+    .cat-tag-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+    .card-body { display: grid; gap: 12px; }
+
+    .card-section-label {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--section-label);
+      margin-bottom: 4px;
+      transition: color .3s;
+    }
+    .card-summary, .card-impact {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      transition: color .3s;
+    }
+    .impact-box {
+      background: var(--impact-bg);
+      border: 1px solid var(--impact-border);
+      border-radius: 7px;
+      padding: 10px 14px;
+      transition: background .3s, border-color .3s;
+    }
+    .impact-box .card-section-label { color: var(--impact-label); }
+    .impact-box .card-impact { color: var(--impact-text); }
+
+    .further-reading { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .further-reading .card-section-label { width: 100%; margin-bottom: 0; }
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .78rem;
+      color: var(--pill-color);
+      text-decoration: none;
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      border-radius: 20px;
+      padding: 3px 11px;
+      transition: background .1s, border-color .1s, color .3s;
+    }
+    .link-pill:hover { background: var(--pill-hover-bg); border-color: var(--pill-hover-border); }
+
+    /* ── Filter states ── */
+    .update-card.hidden { display: none; }
+    .week-section.empty { display: none; }
+    .month-section.empty { display: none; }
+
+    /* ── Scroll highlight animation ── */
+    @keyframes pulseWeek {
+      0%   { background: var(--flash-bg); border-radius: 12px; }
+      100% { background: transparent; }
+    }
+    .week-section.flash { animation: pulseWeek 1.8s ease-out forwards; }
+
+  </style>
+</head>
+<body>
+
+<!-- ── Sticky header ── -->
+<header class="site-header">
+  <h1>Microsoft Foundry / Model Change Log Summary</h1>
+  <div class="filter-wrapper">
+    <span class="filter-label">Theme:</span>
+    <div class="filter-select-wrap">
+      <span class="filter-swatch" id="theme-swatch"></span>
+      <select id="theme-select">
+        <option value="grey">Snow</option>
+        <option value="aurora">Aurora</option>
+        <option value="dark">Abyss</option>
+      </select>
+      <span class="filter-chevron">▾</span>
+    </div>
+    <span class="filter-label">Filter:</span>
+    <div class="filter-select-wrap">
+      <span class="filter-swatch" id="filter-swatch"></span>
+      <select id="category-filter">
+        <option value="all">All Sources</option>
+      </select>
+      <span class="filter-chevron">▾</span>
+    </div>
+    <button class="filter-reset" id="filter-reset">✕ Clear</button>
+  </div>
+</header>
+
+<!-- ── Chart ── -->
+<section class="chart-section">
+  <div class="chart-header">
+    <h2>📊 Announcements — Last 12 Rolling Weeks</h2>
+    <span class="chart-tip">Click a bar to jump to that week ↓</span>
+  </div>
+  <div class="chart-wrapper">
+    <canvas id="weeklyChart"></canvas>
+  </div>
+  <div class="chart-legend" id="chart-legend"></div>
+</section>
+
+<!-- ── Main content (generated by JS) ── -->
+<main class="content-area" id="content-area"></main>
+
+<script>
+// ═══════════════════════════════════════════════
+//  THEMES
+// ═══════════════════════════════════════════════
+
+const THEMES = [
+  { id: 'grey',   label: 'Snow',  swatch: 'linear-gradient(140deg,#d0dae8 0%,#f4f6f9 40%,#ffffff 60%,#d8e0ec 100%)' },
+  { id: 'aurora', label: 'Aurora',  swatch: 'linear-gradient(135deg,#3b1066 0%,#7a1f5d 55%,#c03458 100%)' },
+  { id: 'dark',   label: 'Abyss',   swatch: 'linear-gradient(135deg,#000000 0%,#0c0e28 35%,#121038 60%,#000000 100%)' },
+];
+
+const themeSelect = document.getElementById('theme-select');
+const themeSwatch = document.getElementById('theme-swatch');
+
+const THEME_CHART = {
+  grey:   { tick: '#64748b', ytick: '#94a3b8', grid: '#f1f5f9' },
+  aurora: { tick: '#c8a8f0', ytick: '#9070b8', grid: 'rgba(255,255,255,0.05)' },
+  dark:   { tick: '#4a6890', ytick: '#3a5070', grid: 'rgba(255,255,255,0.05)' },
+};
+
+let activeChart = null;
+
+function applyTheme(themeId) {
+  document.documentElement.setAttribute('data-theme', themeId);
+  const t = THEMES.find(t => t.id === themeId);
+  themeSwatch.style.background = t.swatch;
+  themeSelect.value = themeId;
+  if (activeChart) {
+    const c = THEME_CHART[themeId];
+    activeChart.options.scales.x.ticks.color = c.tick;
+    activeChart.options.scales.x.grid.color  = c.grid;
+    activeChart.options.scales.y.ticks.color = c.ytick;
+    activeChart.options.scales.y.grid.color  = c.grid;
+    activeChart.options.scales.y.title.color = c.ytick;
+    activeChart.update('none');
+  }
+  try { localStorage.setItem('ai-dash-theme', themeId); } catch {}
+}
+
+themeSelect.addEventListener('change', () => applyTheme(themeSelect.value));
+
+const savedTheme = (() => { try { return localStorage.getItem('ai-dash-theme') || 'aurora'; } catch { return 'aurora'; } })();
+applyTheme(savedTheme);
+
+// ═══════════════════════════════════════════════
+//  BOOTSTRAP — load updates.json then init
+// ═══════════════════════════════════════════════
+
+async function loadUpdates() {
+  try {
+    const resp = await fetch('updates.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.json();
+  } catch {
+    console.warn('Could not fetch updates.json (file:// CORS or missing). Serving with no data.\nRun: python -m http.server 8080');
+    return [];
+  }
+}
+
+// ═══════════════════════════════════════════════
+//  STATIC CONFIG
+// ═══════════════════════════════════════════════
+
+const CATEGORIES = [
+  { id: 'foundry', label: 'Azure Foundry',   color: '#0078d4', bg: '#eff6ff' },
+  { id: 'github',  label: 'GitHub Copilot',  color: '#8b5cf6', bg: '#f5f3ff' },
+  { id: 'openai',  label: 'OpenAI',           color: '#10a37f', bg: '#ecfdf5' },
+  { id: 'claude',  label: 'Anthropic Claude', color: '#d97706', bg: '#fffbeb' },
+  { id: 'azureml', label: 'Azure ML',         color: '#dc2626', bg: '#fef2f2' },
+];
+
+const WEEKS = [
+  { id: 1,  label: 'Feb 9',  dateRange: 'Feb 9 – Feb 15, 2026',  month: 'February 2026' },
+  { id: 2,  label: 'Feb 16', dateRange: 'Feb 16 – Feb 22, 2026', month: 'February 2026' },
+  { id: 3,  label: 'Feb 23', dateRange: 'Feb 23 – Mar 1, 2026',  month: 'February 2026' },
+  { id: 4,  label: 'Mar 2',  dateRange: 'Mar 2 – Mar 8, 2026',   month: 'March 2026' },
+  { id: 5,  label: 'Mar 9',  dateRange: 'Mar 9 – Mar 15, 2026',  month: 'March 2026' },
+  { id: 6,  label: 'Mar 16', dateRange: 'Mar 16 – Mar 22, 2026', month: 'March 2026' },
+  { id: 7,  label: 'Mar 23', dateRange: 'Mar 23 – Mar 29, 2026', month: 'March 2026' },
+  { id: 8,  label: 'Mar 30', dateRange: 'Mar 30 – Apr 5, 2026',  month: 'March 2026' },
+  { id: 9,  label: 'Apr 6',  dateRange: 'Apr 6 – Apr 12, 2026',  month: 'April 2026' },
+  { id: 10, label: 'Apr 13', dateRange: 'Apr 13 – Apr 19, 2026', month: 'April 2026' },
+  { id: 11, label: 'Apr 20', dateRange: 'Apr 20 – Apr 26, 2026', month: 'April 2026' },
+  { id: 12, label: 'Apr 27', dateRange: 'Apr 27 – May 3, 2026',  month: 'April 2026' },
+];
+
+// ═══════════════════════════════════════════════
+//  BOOT
+// ═══════════════════════════════════════════════
+
+loadUpdates().then(UPDATES => {
+
+const getCat   = id => CATEGORIES.find(c => c.id === id);
+const weekData = (wId, cId) => UPDATES.filter(u => u.week === wId && u.category === cId).length;
+
+// ═══════════════════════════════════════════════
+//  FILTER DROPDOWN
+// ═══════════════════════════════════════════════
+
+const filterSelect = document.getElementById('category-filter');
+const filterSwatch = document.getElementById('filter-swatch');
+const filterReset  = document.getElementById('filter-reset');
+
+CATEGORIES.forEach(cat => {
+  const opt = document.createElement('option');
+  opt.value = cat.id;
+  opt.textContent = cat.label;
+  filterSelect.appendChild(opt);
+});
+
+// ═══════════════════════════════════════════════
+//  CHART
+// ═══════════════════════════════════════════════
+
+const chartCtx = document.getElementById('weeklyChart').getContext('2d');
+
+const chart = new Chart(chartCtx, {
+  type: 'bar',
+  data: {
+    labels: WEEKS.map(w => w.label),
+    datasets: CATEGORIES.map(cat => ({
+      label: cat.label,
+      data: WEEKS.map(w => weekData(w.id, cat.id)),
+      backgroundColor: cat.color,
+      borderRadius: 0,
+      borderSkipped: false,
+    })),
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: items => WEEKS[items[0].dataIndex].dateRange,
+          footer: () => '↓ Click to jump to this week',
+        },
+        footerColor: '#94a3b8',
+        footerFont: { style: 'italic', size: 11 },
+      },
+    },
+    scales: {
+      x: {
+        stacked: true,
+        grid: { display: false },
+        ticks: { color: '#64748b', font: { size: 11 } },
+      },
+      y: {
+        stacked: true,
+        grid: { color: '#f1f5f9' },
+        ticks: { color: '#94a3b8', stepSize: 1 },
+        title: { display: true, text: 'Announcements', color: '#94a3b8', font: { size: 11 } },
+      },
+    },
+    onHover: (evt, elements) => {
+      evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+    },
+    onClick: (evt, elements) => {
+      if (!elements.length) return;
+      const wk = WEEKS[elements[0].index];
+      const el = document.getElementById(`week-${wk.id}`);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.remove('flash');
+      void el.offsetWidth;
+      el.classList.add('flash');
+    },
+  },
+});
+
+activeChart = chart; // expose to theme switcher
+applyTheme(document.documentElement.getAttribute('data-theme') || 'grey');
+
+// Custom legend
+const legendEl = document.getElementById('chart-legend');
+CATEGORIES.forEach(cat => {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.title = `Filter to ${cat.label}`;
+  item.innerHTML = `<span class="legend-dot" style="background:${cat.color}"></span>${cat.label}`;
+  item.addEventListener('click', () => {
+    filterSelect.value = cat.id;
+    applyFilter();
+  });
+  legendEl.appendChild(item);
+});
+
+// ═══════════════════════════════════════════════
+//  BUILD PAGE CONTENT
+// ═══════════════════════════════════════════════
+
+function buildCard(u) {
+  const cat   = getCat(u.category);
+  const links = u.links.map(l =>
+    `<a class="link-pill" href="${l.url}" target="_blank" rel="noopener">↗ ${l.label}</a>`
+  ).join('');
+  return `
+    <div class="update-card" data-category="${u.category}"
+         style="border-left-color:${cat.color}">
+      <div class="card-header">
+        <span class="card-title">${u.title}</span>
+        <span class="cat-tag" style="background:${cat.bg};color:${cat.color}">
+          <span class="cat-tag-dot" style="background:${cat.color}"></span>
+          ${cat.label}
+        </span>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="card-section-label">Summary &amp; Value</div>
+          <div class="card-summary">${u.summary}</div>
+        </div>
+        <div class="impact-box">
+          <div class="card-section-label">⚡ Business Impact</div>
+          <div class="card-impact">${u.impact}</div>
+        </div>
+        <div class="further-reading">
+          <div class="card-section-label">Further Reading</div>
+          ${links}
+        </div>
+      </div>
+    </div>`;
+}
+
+const contentArea = document.getElementById('content-area');
+
+// Group weeks by month (preserving insertion order)
+const monthMap = new Map();
+WEEKS.forEach(w => {
+  if (!monthMap.has(w.month)) monthMap.set(w.month, []);
+  monthMap.get(w.month).push(w);
+});
+
+monthMap.forEach((weeks, monthName) => {
+  const totalInMonth = UPDATES.filter(u => weeks.some(w => w.id === u.week)).length;
+
+  const monthSection = document.createElement('section');
+  monthSection.className = 'month-section';
+  monthSection.dataset.month = monthName;
+  monthSection.innerHTML = `
+    <div class="month-header">
+      <h2>${monthName}</h2>
+      <span class="month-count">${totalInMonth} update${totalInMonth !== 1 ? 's' : ''}</span>
+    </div>`;
+
+  weeks.forEach(wk => {
+    const wkUpdates = UPDATES.filter(u => u.week === wk.id);
+
+    const weekSection = document.createElement('div');
+    weekSection.className = 'week-section';
+    weekSection.id = `week-${wk.id}`;
+    weekSection.innerHTML = `
+      <div class="week-header">
+        <h3>Week of ${wk.dateRange}</h3>
+        <span class="week-badge">${wkUpdates.length} update${wkUpdates.length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="updates-grid">${wkUpdates.map(buildCard).join('')}</div>`;
+
+    monthSection.appendChild(weekSection);
+  });
+
+  contentArea.appendChild(monthSection);
+});
+
+// ═══════════════════════════════════════════════
+//  FILTER LOGIC
+// ═══════════════════════════════════════════════
+
+function applyFilter() {
+  const sel = filterSelect.value;
+
+  // Swatch
+  filterSwatch.style.background = sel === 'all'
+    ? 'conic-gradient(#0078d4 0 60deg,#8b5cf6 60deg 120deg,#10a37f 120deg 180deg,#d97706 180deg 240deg,#dc2626 240deg 300deg,#0ea5e9 300deg 360deg)'
+    : getCat(sel).color;
+
+  // Reset button
+  filterReset.classList.toggle('visible', sel !== 'all');
+
+  // Cards
+  document.querySelectorAll('.update-card').forEach(card => {
+    card.classList.toggle('hidden', sel !== 'all' && card.dataset.category !== sel);
+  });
+
+  // Weeks
+  document.querySelectorAll('.week-section').forEach(ws => {
+    const visible = ws.querySelectorAll('.update-card:not(.hidden)').length > 0;
+    ws.classList.toggle('empty', !visible);
+  });
+
+  // Months
+  document.querySelectorAll('.month-section').forEach(ms => {
+    const visible = ms.querySelectorAll('.week-section:not(.empty)').length > 0;
+    ms.classList.toggle('empty', !visible);
+  });
+
+  // Chart — hide/show datasets
+  chart.data.datasets.forEach((ds, i) => {
+    ds.hidden = sel !== 'all' && CATEGORIES[i].id !== sel;
+  });
+  chart.update('none'); // no animation on filter
+}
+
+filterSelect.addEventListener('change', applyFilter);
+filterReset.addEventListener('click', () => { filterSelect.value = 'all'; applyFilter(); });
+
+// Init
+applyFilter();
+
+}); // end loadUpdates().then()
+</script>
+</body>
+</html>
