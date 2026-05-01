@@ -1,5 +1,5 @@
 ---
-name: truncate-content
+name: content-truncater
 description: Trims updates.json to a rolling 12-week window by removing entries from the oldest week whenever the content spans more than 12 weeks.
 argument-hint: No arguments required. Reads updates.json, checks the date span, and trims if needed.
 tools: ['edit']
