@@ -1,23 +1,5 @@
 [
   {
-    "week": 1,
-    "category": "claude",
-    "date": "2026-02-07",
-    "title": "Claude Opus 4.6 Fast Mode (2.5× Faster, Priority Queue)",
-    "summary": "Anthropic launched Fast Mode for Opus 4.6, offering 2.5× faster inference at premium pricing via a waitlist. Targets latency-sensitive production workloads without sacrificing model quality.",
-    "impact": "Critical for real-time customer-facing apps and agents that need Opus-level quality with near-Sonnet speeds.",
-    "links": [
-      {
-        "label": "Fast Mode Docs",
-        "url": "https://docs.anthropic.com/en/build-with-claude/fast-mode"
-      },
-      {
-        "label": "Fast Mode Waitlist",
-        "url": "https://claude.com/fast-mode"
-      }
-    ]
-  },
-  {
     "week": 2,
     "category": "foundry",
     "date": "2026-02-17",

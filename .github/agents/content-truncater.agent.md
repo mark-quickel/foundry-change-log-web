@@ -13,28 +13,27 @@ You are a truncate-content agent for the Foundry Summary Tool. Your job is to en
 
 Read `C:\code\foundry-summary-tool\updates.json` in full. The file may be large — use `view_range` in chunks if needed.
 
-Build a list of all unique `week` values present in the file, and note the `date` field of every entry.
+Build a list of all unique `week` integer values present in the file.
 
-### Step 2 — Check the date span
+### Step 2 — Check the week count
 
-Find:
-- **Oldest date** — the earliest `date` value across all entries
-- **Newest date** — the latest `date` value across all entries
-- **Span in weeks** — `ceil((newest_date - oldest_date).days / 7) + 1`
+Collect all unique `week` integer values present in the file and sort them ascending.
 
-If the span is **12 weeks or fewer**, stop here. No changes are needed. Report that the file is within the 12-week limit and exit.
+If there are **12 or fewer** unique week values, stop here. No changes are needed. Report that the file is within the 12-week limit and exit.
 
 ### Step 3 — Identify entries to remove
 
-If the span exceeds 12 weeks:
+If there are more than 12 unique week values:
 
-1. Compute the **cutoff date**: `newest_date - 83 days` (12 weeks = 84 days; entries strictly before this date are outside the window)
-2. Identify all entries whose `date` is **before the cutoff date**
-3. Report how many entries will be removed and what date range they cover, before making any changes
+1. The weeks to **drop** are all week numbers except the 12 largest (most recent). For example, if weeks 1–14 are present, drop weeks 1 and 2.
+2. Identify all entries whose `week` value is in the drop set.
+3. Report the week numbers being dropped, their date ranges, and the entry count, before making any changes.
+
+**Important:** Always drop by week number — never split a week by date. All entries sharing a `week` value must either all be kept or all be removed.
 
 ### Step 4 — Write the trimmed updates.json
 
-Rewrite `updates.json` with only the entries whose `date` is **on or after the cutoff date**. Preserve:
+Rewrite `updates.json` keeping only entries whose `week` is **not** in the drop set. Preserve:
 - The exact JSON structure and formatting (array of objects, 2-space indent)
 - All fields on every retained entry (`week`, `category`, `date`, `title`, `summary`, `impact`, `links`)
 - The original sort order of retained entries
@@ -44,7 +43,7 @@ Do **not** renumber the `week` fields — leave them as-is.
 ### Step 5 — Report results
 
 Output a brief summary:
-- Date range of removed entries (oldest → cutoff)
+- Week numbers removed and their date ranges
 - Number of entries removed
-- New date range of updates.json after trimming
+- Week numbers remaining and their date range
 - Number of entries remaining
