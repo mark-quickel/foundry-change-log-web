@@ -689,33 +689,22 @@ const CATEGORIES = [
   { id: 'azureml', label: 'Azure ML',         color: '#dc2626', bg: '#fef2f2' },
 ];
 
-// Generate 12 calendar weeks (Mon–Sun) anchored to the oldest entry's week.
-// Falls back to today - 11 weeks if no data is available.
-function generateWeeks(updates) {
+// Generate the last 12 rolling calendar weeks (Mon–Sun), ending with the current week.
+function generateWeeks() {
+  const weeks = [];
+  const today = new Date();
+  const dow = today.getDay(); // 0 = Sun
+  const daysToMon = dow === 0 ? 6 : dow - 1;
+  const thisMonday = new Date(today);
+  thisMonday.setDate(today.getDate() - daysToMon);
+  thisMonday.setHours(0, 0, 0, 0);
+
   const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   const iso = d => d.toISOString().split('T')[0];
 
-  const dates = (updates || []).map(u => u.date).filter(Boolean).sort();
-  let firstMonday;
-  if (dates.length) {
-    const oldest = new Date(dates[0] + 'T00:00:00');
-    const dow = oldest.getDay();
-    const daysToMon = dow === 0 ? 6 : dow - 1;
-    firstMonday = new Date(oldest);
-    firstMonday.setDate(oldest.getDate() - daysToMon);
-  } else {
-    const today = new Date();
-    const dow = today.getDay();
-    const daysToMon = dow === 0 ? 6 : dow - 1;
-    firstMonday = new Date(today);
-    firstMonday.setDate(today.getDate() - daysToMon - 11 * 7);
-  }
-  firstMonday.setHours(0, 0, 0, 0);
-
-  const weeks = [];
-  for (let i = 0; i < 12; i++) {
-    const mon = new Date(firstMonday);
-    mon.setDate(firstMonday.getDate() + i * 7);
+  for (let i = 11; i >= 0; i--) {
+    const mon = new Date(thisMonday);
+    mon.setDate(thisMonday.getDate() - i * 7);
     const sun = new Date(mon);
     sun.setDate(mon.getDate() + 6);
     weeks.push({
@@ -728,13 +717,14 @@ function generateWeeks(updates) {
   return weeks;
 }
 
+const WEEKS = generateWeeks();
+
 // ═══════════════════════════════════════════════
 //  BOOT
 // ═══════════════════════════════════════════════
 
 loadUpdates().then(UPDATES => {
 
-const WEEKS   = generateWeeks(UPDATES);
 const getCat   = id => CATEGORIES.find(c => c.id === id);
 const weekData = (w, cId) => UPDATES.filter(u =>
   u.category === cId && u.date >= w.start && u.date <= w.end
