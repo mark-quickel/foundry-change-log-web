@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # allow manual runs from the Actions tab
 
 permissions:
-  contents: write           # needed to commit updates.json back to the repo
+  contents: write           # needed to commit updates.json and sources.json back to the repo
 
 jobs:
   fetch-and-commit:
@@ -16,16 +16,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
 
-      - name: Install dependencies
-        run: pip install requests beautifulsoup4
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
 
-      - name: Fetch changelog updates
-        run: python scripts/fetch_updates.py
+      - name: Run content-updater agent
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+        run: |
+          copilot -p "/content-updater" \
+            --allow-tool=web \
+            --allow-tool=edit \
+            --allow-tool=read \
+            --allow-tool=search \
+            --no-ask-user
+
+      - name: Run content-truncater agent
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+        run: |
+          copilot -p "/content-truncater" \
+            --allow-tool=edit \
+            --allow-tool=read \
+            --no-ask-user
 
       - name: Detect changes
         id: changes
