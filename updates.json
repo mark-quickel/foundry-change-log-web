@@ -1,5 +1,53 @@
 [
   {
+    "week": 1,
+    "category": "claude",
+    "date": "2026-02-05",
+    "title": "Claude Opus 4.6 API Launch + Extended Thinking GA",
+    "summary": "Anthropic released Claude Opus 4.6 to the API with extended thinking GA, compaction API beta, fine-grained streaming GA, and 1M token context window in beta. Also introduced data residency options for enterprise customers.",
+    "impact": "Enterprises can now use Claude's most capable model via API with thinking transparency, longer context, and regional data controls — enabling compliance-sensitive RAG and agentic workloads.",
+    "links": [
+      {
+        "label": "Claude Opus 4.6 Announcement",
+        "url": "https://www.anthropic.com/news/claude-opus-4-6"
+      },
+      {
+        "label": "What's New in Claude 4.6",
+        "url": "https://docs.anthropic.com/en/about-claude/models/whats-new-claude-4-6"
+      },
+      {
+        "label": "Adaptive Thinking Docs",
+        "url": "https://docs.anthropic.com/en/build-with-claude/adaptive-thinking"
+      },
+      {
+        "label": "Compaction API Docs",
+        "url": "https://docs.anthropic.com/en/build-with-claude/compaction"
+      },
+      {
+        "label": "Data Residency Docs",
+        "url": "https://docs.anthropic.com/en/build-with-claude/data-residency"
+      }
+    ]
+  },
+  {
+    "week": 1,
+    "category": "claude",
+    "date": "2026-02-07",
+    "title": "Claude Opus 4.6 Fast Mode (2.5× Faster, Priority Queue)",
+    "summary": "Anthropic launched Fast Mode for Opus 4.6, offering 2.5× faster inference at premium pricing via a waitlist. Targets latency-sensitive production workloads without sacrificing model quality.",
+    "impact": "Critical for real-time customer-facing apps and agents that need Opus-level quality with near-Sonnet speeds.",
+    "links": [
+      {
+        "label": "Fast Mode Docs",
+        "url": "https://docs.anthropic.com/en/build-with-claude/fast-mode"
+      },
+      {
+        "label": "Fast Mode Waitlist",
+        "url": "https://claude.com/fast-mode"
+      }
+    ]
+  },
+  {
     "week": 2,
     "category": "foundry",
     "date": "2026-02-17",
