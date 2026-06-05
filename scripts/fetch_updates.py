@@ -15,7 +15,7 @@ In CI:        called by .github/workflows/update-changelog.yml
 """
 
 import json, re, sys, time
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from pathlib import Path
 
 import requests
@@ -55,7 +55,7 @@ def latest_date(updates: list, category: str) -> str:
 
 
 def compute_week(date_str: str, anchor: date) -> int:
-    """Return 1-based week number relative to the anchor (earliest existing entry)."""
+    """Return 1-based week number relative to the anchor epoch."""
     try:
         d = datetime.strptime(date_str, "%Y-%m-%d").date()
         return (d - anchor).days // 7 + 1
@@ -64,11 +64,28 @@ def compute_week(date_str: str, anchor: date) -> int:
 
 
 def anchor_date(updates: list) -> date:
-    """Return the earliest date in the existing updates list as the week-1 anchor."""
-    dates = [u["date"] for u in updates if u.get("date")]
-    if dates:
-        return datetime.strptime(min(dates), "%Y-%m-%d").date()
-    return date.today()
+    """Back-calculate the week-1 epoch from the latest existing entry that has a week number.
+
+    Using the *latest* entry (rather than the earliest) avoids drift: the latest
+    entry typically came from the most recent agent run which set the week correctly.
+    Fallback: 2026-02-05, which is the known epoch for this dashboard.
+    """
+    FALLBACK = date(2026, 2, 5)
+    candidates = [
+        (u["date"], u["week"])
+        for u in updates
+        if u.get("date") and isinstance(u.get("week"), int) and u["week"] >= 1
+    ]
+    if not candidates:
+        return FALLBACK
+    candidates.sort(reverse=True)
+    ref_date_str, ref_week = candidates[0]
+    ref_date_obj = datetime.strptime(ref_date_str, "%Y-%m-%d").date()
+    inferred = ref_date_obj - timedelta(days=(ref_week - 1) * 7)
+    # Sanity check: anchor should be close to the known epoch
+    if abs((inferred - FALLBACK).days) > 14:
+        return FALLBACK
+    return inferred
 
 
 def fetch_html(url: str):
