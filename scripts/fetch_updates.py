@@ -54,6 +54,23 @@ def latest_date(updates: list, category: str) -> str:
     return max(dates) if dates else "2026-02-09"
 
 
+def compute_week(date_str: str, anchor: date) -> int:
+    """Return 1-based week number relative to the anchor (earliest existing entry)."""
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d").date()
+        return (d - anchor).days // 7 + 1
+    except ValueError:
+        return 1
+
+
+def anchor_date(updates: list) -> date:
+    """Return the earliest date in the existing updates list as the week-1 anchor."""
+    dates = [u["date"] for u in updates if u.get("date")]
+    if dates:
+        return datetime.strptime(min(dates), "%Y-%m-%d").date()
+    return date.today()
+
+
 def fetch_html(url: str):
     try:
         r = SESSION.get(url, timeout=25)
@@ -87,9 +104,9 @@ def is_duplicate(updates: list, category: str, title: str) -> bool:
     )
 
 
-def make_entry(category, date_str, title, summary, impact, url, link_label="Read more") -> dict:
+def make_entry(category, date_str, title, summary, impact, url, link_label="Read more", *, week_anchor: date) -> dict:
     return {
-        "week": None,
+        "week": compute_week(date_str, week_anchor),
         "category": category,
         "date": date_str,
         "title": title,
@@ -130,7 +147,7 @@ def _extract_sibling_text(elem, max_chars=350) -> str:
     return " ".join(parts)[:max_chars].strip()
 
 
-def fetch_microsoft_learn(url: str, category: str, since: str, updates: list) -> list:
+def fetch_microsoft_learn(url: str, category: str, since: str, updates: list, week_anchor: date) -> list:
     """
     Generic parser for Microsoft Learn 'What's New' pages.
     Looks for date headings (h2/h3) and feature headings beneath them.
@@ -187,6 +204,7 @@ def fetch_microsoft_learn(url: str, category: str, since: str, updates: list) ->
             impact=impact,
             url=link_url,
             link_label="View on Microsoft Learn",
+            week_anchor=week_anchor,
         ))
 
     return new_entries
@@ -194,7 +212,7 @@ def fetch_microsoft_learn(url: str, category: str, since: str, updates: list) ->
 
 # ─── GitHub Copilot CLI (raw markdown) ─────────────────────────────────────
 
-def fetch_github_changelog(updates: list) -> list:
+def fetch_github_changelog(updates: list, week_anchor: date) -> list:
     url   = "https://raw.githubusercontent.com/github/copilot-cli/main/changelog.md"
     since = latest_date(updates, "github")
 
@@ -244,6 +262,7 @@ def fetch_github_changelog(updates: list) -> list:
             impact="Update your Copilot CLI to get the latest features and bug fixes.",
             url="https://github.com/github/copilot-cli/blob/main/changelog.md",
             link_label="Changelog",
+            week_anchor=week_anchor,
         ))
 
     return new_entries
@@ -251,7 +270,7 @@ def fetch_github_changelog(updates: list) -> list:
 
 # ─── Anthropic Claude release notes ────────────────────────────────────────
 
-def fetch_anthropic_notes(updates: list) -> list:
+def fetch_anthropic_notes(updates: list, week_anchor: date) -> list:
     url   = "https://docs.anthropic.com/en/release-notes/overview"
     since = latest_date(updates, "claude")
 
@@ -298,6 +317,7 @@ def fetch_anthropic_notes(updates: list) -> list:
             impact="Evaluate how this Claude API change affects your model integrations and prompting strategies.",
             url=link_url,
             link_label="Anthropic Release Notes",
+            week_anchor=week_anchor,
         ))
 
     return new_entries
@@ -309,6 +329,9 @@ def main():
     print("📰  Fetching changelog updates…")
     updates = load_updates()
     print(f"    Loaded {len(updates)} existing entries\n")
+
+    week_anchor = anchor_date(updates)
+    print(f"    Week anchor (week 1 = {week_anchor})\n")
 
     all_new = []
 
@@ -325,20 +348,20 @@ def main():
         print(f"{label}…")
         since = latest_date(updates, category)
         print(f"    Since: {since}")
-        new = fetch_microsoft_learn(url, category, since, updates)
+        new = fetch_microsoft_learn(url, category, since, updates, week_anchor)
         print(f"    Found {len(new)} new entries")
         all_new.extend(new)
         time.sleep(1)   # be polite between requests
 
     print("\n🟣 GitHub Copilot CLI…")
-    new = fetch_github_changelog(updates)
+    new = fetch_github_changelog(updates, week_anchor)
     print(f"    Found {len(new)} new entries")
     all_new.extend(new)
 
     time.sleep(1)
 
     print("\n🟠 Anthropic Claude…")
-    new = fetch_anthropic_notes(updates)
+    new = fetch_anthropic_notes(updates, week_anchor)
     print(f"    Found {len(new)} new entries")
     all_new.extend(new)
 

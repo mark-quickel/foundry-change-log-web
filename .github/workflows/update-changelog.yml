@@ -16,28 +16,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Install Copilot CLI
-        run: npm install -g @github/copilot
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
 
-      - name: Run content-updater agent
-        env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
-        run: |
-          copilot -p "/content-updater" \
-            --allow-tool=web \
-            --allow-tool=edit \
-            --allow-tool=read \
-            --allow-tool=search \
-            --allow-tool=shell \
-            --no-ask-user
+      - name: Run fetch script
+        run: python scripts/fetch_updates.py
 
       - name: Run content-truncater agent
         env:
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
         run: |
+          npm install -g @github/copilot
           copilot -p "/content-truncater" \
             --allow-tool=edit \
             --allow-tool=read \
