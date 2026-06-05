@@ -31,6 +31,7 @@ jobs:
             --allow-tool=edit \
             --allow-tool=read \
             --allow-tool=search \
+            --allow-tool=shell \
             --no-ask-user
 
       - name: Run content-truncater agent
