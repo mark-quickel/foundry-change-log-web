@@ -154,9 +154,19 @@
     "name": "Microsoft Foundry Labs – What's New April 2026",
     "category": "foundry",
     "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/whats-new-in-foundry-labs---april-2026/4509714",
-    "description": "April 2026 Foundry Labs roundup covering MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2, harrier-oss-v1 multilingual embeddings, Phi-4-Reasoning-Vision-15B, VibeVoice ASR, and GigaTIME research model.",
+    "description": "April 2026 Foundry Labs roundup covering MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2, harrier-oss-v1 multilingual embeddings, Phi-4-Reasoning-Vision-15B, VibeVoice ASR, and Gig[...]",
     "lastFetched": "2026-05-01",
     "coverageRange": "April 2026",
-    "notes": "Published April 9, 2026 on Microsoft Tech Community. Discovered during May 1, 2026 update run; was not previously tracked. Note: April 2026 monthly blog roundup (whats-new-in-microsoft-foundry-apr-2026) returned 404 as of 2026-05-01 — not yet published."
+    "notes": "Published April 9, 2026 on Microsoft Tech Community. Discovered during May 1, 2026 update run; was not previously tracked. Note: April 2026 monthly blog roundup (whats-new-in-micros[...]"
+  },
+  {
+    "id": "foundry-blog-build-2026",
+    "name": "Microsoft Foundry Blog – What's New at Build 2026",
+    "category": "foundry",
+    "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026/",
+    "description": "Build 2026 roundup of Microsoft Foundry announcements and platform updates.",
+    "lastFetched": "2026-05-01",
+    "coverageRange": "May 2026",
+    "notes": "Published during Microsoft Build 2026. Added from requested blog article."
   }
 ]
