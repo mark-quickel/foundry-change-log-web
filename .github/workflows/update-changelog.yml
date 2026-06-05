@@ -27,16 +27,6 @@ jobs:
       - name: Run fetch script
         run: python scripts/fetch_updates.py
 
-      - name: Run content-truncater agent
-        env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
-        run: |
-          npm install -g @github/copilot
-          copilot -p "/content-truncater" \
-            --allow-tool=edit \
-            --allow-tool=read \
-            --no-ask-user
-
       - name: Detect changes
         id: changes
         run: |
