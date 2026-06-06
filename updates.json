@@ -2,6 +2,20 @@
   {
     "week": 17,
     "category": "github",
+    "date": "2026-06-05",
+    "title": "GitHub Copilot CLI 1.0.60",
+    "summary": "Tab completes `..` parent traversal in slash-command path arguments instead of switching tabs; Add the max reasoning effort level for Anthropic models and make all effort levels available on every plan; Screen no longer stays blank after waking from sleep inside a terminal multiplexer; Input fields render background color correctly inside highlight",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 17,
+    "category": "github",
     "date": "2026-06-02",
     "title": "GitHub Copilot CLI 1.0.59",
     "summary": "Actionable error message shown when GitHub API rate limit is hit during `copilot update`; Add /rubber-duck command for adversarial feedback on code and designs; Plugin slash commands (/plugin install, uninstall, update, marketplace add/remove/browse) now show immediate feedback while the operation is in progress; Canceling a running shell command (",
