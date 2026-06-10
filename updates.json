@@ -2,6 +2,20 @@
   {
     "week": 17,
     "category": "github",
+    "date": "2026-06-09",
+    "title": "GitHub Copilot CLI 1.0.61",
+    "summary": "Polish /agents picker and Create New Agent wizard with consistent borders, headers, and styled inputs; Fixed a bug where resuming a session could leave the screen blank; Add /settings interactive dialog to browse and edit all user settings in one place; Resuming a local session with memory disabled no longer crashes the UI to a blank screen",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 17,
+    "category": "github",
     "date": "2026-06-05",
     "title": "GitHub Copilot CLI 1.0.60",
     "summary": "Tab completes `..` parent traversal in slash-command path arguments instead of switching tabs; Add the max reasoning effort level for Anthropic models and make all effort levels available on every plan; Screen no longer stays blank after waking from sleep inside a terminal multiplexer; Input fields render background color correctly inside highlight",
