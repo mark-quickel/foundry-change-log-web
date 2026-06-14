@@ -2,6 +2,20 @@
   {
     "week": 17,
     "category": "github",
+    "date": "2026-06-13",
+    "title": "GitHub Copilot CLI 1.0.62",
+    "summary": "Ask and elicitation dialogs now scroll together with the timeline instead of taking over the screen, so a tall dialog no longer hides the agent's output — scroll up to read earlier output, then back down to the dialog; Keep blank lines between reasoning summary sections; Show user-typed colon terms in the search chip; Plugins can now ship extension",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 17,
+    "category": "github",
     "date": "2026-06-09",
     "title": "GitHub Copilot CLI 1.0.61",
     "summary": "Polish /agents picker and Create New Agent wizard with consistent borders, headers, and styled inputs; Fixed a bug where resuming a session could leave the screen blank; Add /settings interactive dialog to browse and edit all user settings in one place; Resuming a local session with memory disabled no longer crashes the UI to a blank screen",
