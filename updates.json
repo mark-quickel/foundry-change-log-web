@@ -1,5 +1,19 @@
 [
   {
+    "week": 19,
+    "category": "github",
+    "date": "2026-06-15",
+    "title": "GitHub Copilot CLI 1.0.63",
+    "summary": "Blocked image attachments now explain what to do — enable vision via the \"Editor preview features\" policy, switch to a vision-capable model, or try a different image — instead of showing a confusing error.; Options in `--help` output sort alphabetically, including options that have two long flags; Auth validation errors (e.g., VPN or IP allowlist f",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 17,
     "category": "github",
     "date": "2026-06-13",
