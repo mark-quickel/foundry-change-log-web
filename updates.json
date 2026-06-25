@@ -2,6 +2,20 @@
   {
     "week": 20,
     "category": "github",
+    "date": "2026-06-24",
+    "title": "GitHub Copilot CLI 1.0.65",
+    "summary": "/cd now persists the working directory so resuming a session returns to it, and discovers custom agents in the new directory; Commands with slash-prefixed string arguments (e.g. --body \"/azp run\") no longer trigger spurious filesystem permission prompts; Fullscreen timeline stays anchored when older content is trimmed; Resume open canvases automati",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 20,
+    "category": "github",
     "date": "2026-06-23",
     "title": "GitHub Copilot CLI 1.0.64",
     "summary": "Path access prompt shows resolved symlink targets so you can see exactly what access is being granted; Show the pay-as-you-go additional usage budget at launch, refresh it after a request is rejected for hitting the additional spend limit, and show a friendly message when the additional usage limit is reached; Add websocket responses support for BY",
