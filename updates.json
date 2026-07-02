@@ -2,6 +2,20 @@
   {
     "week": 20,
     "category": "github",
+    "date": "2026-07-01",
+    "title": "GitHub Copilot CLI 1.0.68",
+    "summary": "Add support for the kimi-k2.7-code model; The focused field in the /mcp config form is marked with a \"❯ \" chevron, not color alone; Keep IDE tools available during transient IDE disconnects, returning a clear error while disconnected and recovering automatically when the IDE reconnects; Tab completion shows slash command aliases inline (e.g. /pr au",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 20,
+    "category": "github",
     "date": "2026-06-30",
     "title": "GitHub Copilot CLI 1.0.67",
     "summary": "Disabling the sandbox for the rest of the session now takes effect immediately, so shell and search commands stop re-prompting to bypass it mid-turn; Subagent sessions keep parent tool restrictions; Show warnings and errors when host custom agents fail to load; Require session limits to be at least 30 AI credits",
