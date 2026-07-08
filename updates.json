@@ -2,6 +2,20 @@
   {
     "week": 20,
     "category": "github",
+    "date": "2026-07-07",
+    "title": "GitHub Copilot CLI 1.0.69",
+    "summary": "Label built-in file edits with a (sandbox policy) badge instead of (sandboxed), since they follow the sandbox policy on a best-effort basis rather than running in the OS-level sandbox; Reload installed plugin extensions without restarting a session; Add a /plugins dashboard to manage installed plugins; Open quick help from an empty prompt without l",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 20,
+    "category": "github",
     "date": "2026-07-01",
     "title": "GitHub Copilot CLI 1.0.68",
     "summary": "Add support for the kimi-k2.7-code model; The focused field in the /mcp config form is marked with a \"❯ \" chevron, not color alone; Keep IDE tools available during transient IDE disconnects, returning a clear error while disconnected and recovering automatically when the IDE reconnects; Tab completion shows slash command aliases inline (e.g. /pr au",
