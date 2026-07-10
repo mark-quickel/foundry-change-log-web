@@ -1,5 +1,19 @@
 [
   {
+    "week": 23,
+    "category": "github",
+    "date": "2026-07-09",
+    "title": "GitHub Copilot CLI 1.0.70",
+    "summary": "Add GPT-5.6 model support; Show a single Error prefix for mcp and skill command failures; Show the real parse error when --agent selects a malformed custom agent; web_fetch works through mandatory HTTPS proxies",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 20,
     "category": "github",
     "date": "2026-07-07",
