@@ -1,5 +1,19 @@
 [
   {
+    "week": 24,
+    "category": "github",
+    "date": "2026-07-16",
+    "title": "GitHub Copilot CLI 1.0.71",
+    "summary": "`copilot -p --autopilot` no longer hangs when a background shell or agent outlives the turn; it now honors the COPILOT_TASK_WAIT_TIMEOUT_SECONDS timeout the same way plain `-p` does.; Reopening the /subagents model picker keeps each agent's reasoning effort and context tier; Refresh memory context after 30 minutes in long-lived sessions; Keep MCP t",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 23,
     "category": "github",
     "date": "2026-07-09",
