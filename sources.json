@@ -5,7 +5,7 @@
     "category": "foundry",
     "url": "https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry",
     "description": "Official Microsoft Learn docs page for Foundry monthly documentation updates.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Page surfaces new and updated articles; last git commit April 17, 2026."
   },
@@ -15,7 +15,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-feb-2026/",
     "description": "Monthly developer blog roundup for all Microsoft Foundry updates in February 2026.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "February 2026",
     "notes": "Published March 6, 2026. Covers models, agents, platform, and SDK changes."
   },
@@ -25,7 +25,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-mar-2026/",
     "description": "Monthly developer blog roundup for all Microsoft Foundry updates in March 2026.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "March 2026",
     "notes": "Published April 9, 2026. Covers Agent Service GA, SDK GAs, models, guardrails, and platform updates."
   },
@@ -35,7 +35,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-dec-2025-jan-2026/",
     "description": "Monthly developer blog roundup for December 2025 and January 2026.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "December 2025 – January 2026",
     "notes": "Published February 18, 2026. Mostly before the 12-week dashboard window (Feb 9 – Apr 30, 2026)."
   },
@@ -45,7 +45,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/",
     "description": "April 22, 2026 announcement: Agent Framework v1.0 GA, Foundry Toolkit GA, Toolbox, Hosted Agents, Memory, Observability.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 22, 2026."
   },
@@ -55,7 +55,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/introducing-toolboxes-in-foundry/",
     "description": "Deep-dive announcement of the Toolbox feature in Foundry (public preview).",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 22, 2026."
   },
@@ -65,7 +65,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-finetune-april-2026/",
     "description": "April 2026 Reinforcement Fine-Tuning updates: Global Training, new model graders, RFT best practices.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 16, 2026."
   },
@@ -75,7 +75,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/introducing-the-new-hosted-agents-in-foundry-agent-service-secure-scalable-compute-built-for-agents/",
     "description": "April 22, 2026 announcement of new hosted agents in Foundry Agent Service.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 22, 2026."
   },
@@ -85,7 +85,7 @@
     "category": "claude",
     "url": "https://docs.anthropic.com/en/release-notes/overview",
     "description": "Official Anthropic release notes for the Claude API, client SDKs, and Claude Console.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "February – April 2026 (and prior)",
     "notes": "Best source with specific dates for all entries. Comprehensive coverage of API changes, model launches, and tool GA events."
   },
@@ -95,7 +95,7 @@
     "category": "github",
     "url": "https://github.com/github/copilot-cli/blob/main/changelog.md",
     "description": "GitHub Copilot CLI (github.com/github/copilot-cli) version-by-version changelog.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "March 2026 – April 2026 (v1.0.6+)",
     "notes": "Changelog starts at v1.0.39 (Apr 28) and fetched back to v1.0.6 (Mar 16). Earlier versions not available from web fetch. Rapid release cadence with multiple versions per week."
   },
@@ -105,7 +105,7 @@
     "category": "openai",
     "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/whats-new",
     "description": "Microsoft Learn page for Azure OpenAI Service changelog and new model announcements.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "February 2026 (within window)",
     "notes": "Only one entry found within the Feb 9 – Apr 30 window: GPT-Realtime-1.5 and GPT-Audio-1.5 (February 2026). Earlier model releases documented for reference."
   },
@@ -115,7 +115,7 @@
     "category": "claude",
     "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
     "description": "Official Anthropic announcement for Claude Sonnet 4.6.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "February 2026",
     "notes": "Supplementary source; primary data from release notes."
   },
@@ -125,7 +125,7 @@
     "category": "claude",
     "url": "https://www.anthropic.com/news/claude-opus-4-7",
     "description": "Official Anthropic announcement for Claude Opus 4.7.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 16, 2026."
   },
@@ -135,7 +135,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/microsoft-agent-framework-reaches-release-candidate/",
     "description": "Dedicated post announcing Microsoft Agent Framework 1.0.0rc1 for Python and .NET.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "February 2026",
     "notes": "Published February 19, 2026."
   },
@@ -145,7 +145,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/foundry-local-ga/",
     "description": "Announcement of Foundry Local reaching general availability as a cross-platform, on-device AI SDK supporting Windows, macOS, Linux, and Android with no cloud dependency.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 9, 2026. Discovered during May 1, 2026 update run; was not previously tracked in sources.json."
   },
@@ -155,7 +155,7 @@
     "category": "foundry",
     "url": "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/whats-new-in-foundry-labs---april-2026/4509714",
     "description": "April 2026 Foundry Labs roundup covering MAI-Transcribe-1, MAI-Voice-1, MAI-Image-2, harrier-oss-v1 multilingual embeddings, Phi-4-Reasoning-Vision-15B, VibeVoice ASR, and Gig[...]",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "April 2026",
     "notes": "Published April 9, 2026 on Microsoft Tech Community. Discovered during May 1, 2026 update run; was not previously tracked. Note: April 2026 monthly blog roundup (whats-new-in-micros[...]"
   },
@@ -165,7 +165,7 @@
     "category": "foundry",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-build-2026/",
     "description": "Build 2026 roundup of Microsoft Foundry announcements and platform updates.",
-    "lastFetched": "2026-07-17",
+    "lastFetched": "2026-07-18",
     "coverageRange": "May 2026",
     "notes": "Published during Microsoft Build 2026. Added from requested blog article."
   }
