@@ -2,6 +2,34 @@
   {
     "week": 24,
     "category": "github",
+    "date": "2026-07-20",
+    "title": "GitHub Copilot CLI 1.0.73",
+    "summary": "Anthropic subagents continue working when additional directories are configured; Resolve relative links in custom agent instructions from the agent file location",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "category": "github",
+    "date": "2026-07-20",
+    "title": "GitHub Copilot CLI 1.0.72",
+    "summary": "An `agentStop` hook that always blocks no longer loops indefinitely: the CLI now ends the turn after 8 consecutive blocks, and `agentStop` hooks receive a `stop_hook_active` flag so they can detect a forced continuation and self-limit; Add opt-in git and gh authentication inside the OS sandbox; Sandbox macOS keychain access now defaults off for tig",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "category": "github",
     "date": "2026-07-16",
     "title": "GitHub Copilot CLI 1.0.71",
     "summary": "`copilot -p --autopilot` no longer hangs when a background shell or agent outlives the turn; it now honors the COPILOT_TASK_WAIT_TIMEOUT_SECONDS timeout the same way plain `-p` does.; Reopening the /subagents model picker keeps each agent's reasoning effort and context tier; Refresh memory context after 30 minutes in long-lived sessions; Keep MCP t",
