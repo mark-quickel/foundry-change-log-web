@@ -2,6 +2,20 @@
   {
     "week": 24,
     "category": "github",
+    "date": "2026-07-23",
+    "title": "GitHub Copilot CLI 1.0.74",
+    "summary": "Typing `?` while the /search bar is open enters it as text instead of opening quick help; Add support for Open Plugin Spec v1 plugin manifests and mcp.json configuration; IDE integration reconnects reliably when the CLI reloads MCP servers or changes directory; Multi-turn subagent timelines show every prompt and response in the correct order after ",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "category": "github",
     "date": "2026-07-20",
     "title": "GitHub Copilot CLI 1.0.73",
     "summary": "Anthropic subagents continue working when additional directories are configured; Resolve relative links in custom agent instructions from the agent file location",
