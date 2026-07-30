@@ -2,6 +2,20 @@
   {
     "week": 24,
     "category": "github",
+    "date": "2026-07-29",
+    "title": "GitHub Copilot CLI 1.0.76",
+    "summary": "Add enable/disable controls in /plugins for plugins, instructions, agents, LSP servers, and hooks; Add support for the grok-4.5 model; Sandbox denied paths are enforced for relative and symlinked entries on macOS and Linux (Windows cannot deny per path); Unsent prompt text now stays with the session it was typed for (for the rest of the CLI session",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "category": "github",
     "date": "2026-07-24",
     "title": "GitHub Copilot CLI 1.0.75",
     "summary": "Add support for Claude Opus 5",
