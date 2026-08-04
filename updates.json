@@ -2,6 +2,20 @@
   {
     "week": 24,
     "category": "github",
+    "date": "2026-08-03",
+    "title": "GitHub Copilot CLI 1.0.78",
+    "summary": "Timeline headers show how long each tool call took, right-aligned and ticking live while it runs (for calls of at least 5 seconds). On by default — disable with `/settings showToolDurations`.; First-party plugins automatically update to the latest version at session start; Add the experimental /new-worktree command to create a new worktree and star",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "category": "github",
     "date": "2026-07-30",
     "title": "GitHub Copilot CLI 1.0.77",
     "summary": "Unconditional autopilot approval now disables sandbox for the current session when bypass is allowed; Ctrl+G opens your editor to edit ask_user freeform answers without closing the prompt; Add a browser-based (web) OAuth login flow, now the default for `copilot login` on local interactive terminals (device code remains the default on remote/headles",
