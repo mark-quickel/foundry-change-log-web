@@ -2,6 +2,20 @@
   {
     "week": 27,
     "category": "github",
+    "date": "2026-08-14",
+    "title": "GitHub Copilot CLI 1.0.80",
+    "summary": "Update model configurations",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 27,
+    "category": "github",
     "date": "2026-08-10",
     "title": "GitHub Copilot CLI 1.0.79",
     "summary": "The /sandbox configuration dialog shows where sandbox settings are stored in settings.json; Add support for enterprise allow-auto-only policy so /allow-all auto works while full allow-all remains blocked.; Allow enterprise-managed sandbox policy to enforce a proxy URL while credentials remain user-controlled; A tool directory inside your workspace ",
