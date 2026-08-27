@@ -1,5 +1,19 @@
 [
   {
+    "week": 28,
+    "category": "github",
+    "date": "2026-08-27",
+    "title": "GitHub Copilot CLI 1.0.81",
+    "summary": "The plugins dashboard is available to everyone: run `/plugin`, `/mcp`, or `/skills`. Set `PLUGINS_DASHBOARD=false` to opt out of it and the `copilot plugins` command.; Ship MCP 2026-07-28 support to CLI, SDK, IDE, and in-memory clients; Hooks can now receive the current OpenTelemetry trace context and emit correlated spans: inputs gain `traceparent",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 27,
     "category": "github",
     "date": "2026-08-14",
