@@ -2,6 +2,20 @@
   {
     "week": 28,
     "category": "github",
+    "date": "2026-08-29",
+    "title": "GitHub Copilot CLI 1.0.82",
+    "summary": "A message typed while /worktree or /move is preparing the worktree no longer breaks the switch into it; Ctrl+E expands the plan approval card to show the full plan again; Show the specific authentication failure (such as 401 Bad credentials) instead of only the /login prompt",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 28,
+    "category": "github",
     "date": "2026-08-27",
     "title": "GitHub Copilot CLI 1.0.81",
     "summary": "The plugins dashboard is available to everyone: run `/plugin`, `/mcp`, or `/skills`. Set `PLUGINS_DASHBOARD=false` to opt out of it and the `copilot plugins` command.; Ship MCP 2026-07-28 support to CLI, SDK, IDE, and in-memory clients; Hooks can now receive the current OpenTelemetry trace context and emit correlated spans: inputs gain `traceparent",
