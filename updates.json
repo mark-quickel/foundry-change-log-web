@@ -1,5 +1,19 @@
 [
   {
+    "week": 31,
+    "category": "github",
+    "date": "2026-09-04",
+    "title": "GitHub Copilot CLI 1.0.83",
+    "summary": "Show running Copilot sessions in the Windows 11 taskbar with live hover status cards; Add Client ID Metadata Document (CIMD) support for MCP OAuth sign-in; Custom agents can list several models in `model`, tried in order until one is available to you, and `model-policy: required` keeps model changes on that list; Adding support for claude-fable-5.1",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 28,
     "category": "github",
     "date": "2026-08-29",
