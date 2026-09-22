@@ -2,6 +2,20 @@
   {
     "week": 32,
     "category": "github",
+    "date": "2026-09-21",
+    "title": "GitHub Copilot CLI 1.0.87",
+    "summary": "Add user and managed startup defaults for the Auto routing tier, including strict and user-overridable organization policy; Consecutive steering prompts in the same mode combine into one pending message. Press Up in an empty chat input to take it back for editing, including pasted text and attachments. The recall hint appears in the pending message",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 32,
+    "category": "github",
     "date": "2026-09-17",
     "title": "GitHub Copilot CLI 1.0.86",
     "summary": "Custom agents can opt into repository instruction files (AGENTS.md, copilot-instructions.md, CLAUDE.md) by setting `include-custom-instructions: true` in their frontmatter.; Resuming an active session without plugin-directory, discovery, or working-directory overrides preserves marketplace plugins and skills after reload. Configuration read or vali",
