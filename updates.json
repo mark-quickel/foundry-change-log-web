@@ -2,6 +2,20 @@
   {
     "week": 32,
     "category": "github",
+    "date": "2026-09-22",
+    "title": "GitHub Copilot CLI 1.0.88",
+    "summary": "Add optional OSC 777 terminal notifications for direct Ghostty and WezTerm sessions.; Text selection now works in bottom-anchored dialogs, including login device codes; Preserve /allow-all during managed-settings refresh failures, and remember exact session approvals for missing paths without granting their parent directory; exact grants are visibl",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 32,
+    "category": "github",
     "date": "2026-09-21",
     "title": "GitHub Copilot CLI 1.0.87",
     "summary": "Add user and managed startup defaults for the Auto routing tier, including strict and user-overridable organization policy; Consecutive steering prompts in the same mode combine into one pending message. Press Up in an empty chat input to take it back for editing, including pasted text and attachments. The recall hint appears in the pending message",
