@@ -2,6 +2,20 @@
   {
     "week": 32,
     "category": "github",
+    "date": "2026-09-28",
+    "title": "GitHub Copilot CLI 1.0.89",
+    "summary": "Left-clicking supported ask_user and elicitation form inputs focuses them and places the cursor at the clicked position; Add support for Claude Code rule files in .claude/rules as custom instructions; Sessions in the sidebar show a blue dot when they finished a turn you have not opened yet; Auto suggests a routing tier and lets you switch with a sh",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 32,
+    "category": "github",
     "date": "2026-09-22",
     "title": "GitHub Copilot CLI 1.0.88",
     "summary": "Add optional OSC 777 terminal notifications for direct Ghostty and WezTerm sessions.; Text selection now works in bottom-anchored dialogs, including login device codes; Preserve /allow-all during managed-settings refresh failures, and remember exact session approvals for missing paths without granting their parent directory; exact grants are visibl",
