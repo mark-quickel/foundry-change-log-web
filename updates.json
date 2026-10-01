@@ -1,5 +1,19 @@
 [
   {
+    "week": 34,
+    "category": "github",
+    "date": "2026-09-30",
+    "title": "GitHub Copilot CLI 1.0.90",
+    "summary": "Add support for GPT-6.1 Sol in model selection; Add --mcp-github-auth to scope GitHub account auth to approved MCP server origins; Add session-scoped read-only directory approvals to path access prompts; Permission prompts remain answerable after resuming interrupted sessions.",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 32,
     "category": "github",
     "date": "2026-09-28",
