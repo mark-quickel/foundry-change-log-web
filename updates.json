@@ -2,6 +2,20 @@
   {
     "week": 34,
     "category": "github",
+    "date": "2026-10-01",
+    "title": "GitHub Copilot CLI 1.0.91",
+    "summary": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`; Session timelines now clear busy status after interrupted turns finish.; Sandboxed commands run on Windows versions without filesystem enumeration support, with a warni",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 34,
+    "category": "github",
     "date": "2026-09-30",
     "title": "GitHub Copilot CLI 1.0.90",
     "summary": "Add support for GPT-6.1 Sol in model selection; Add --mcp-github-auth to scope GitHub account auth to approved MCP server origins; Add session-scoped read-only directory approvals to path access prompts; Permission prompts remain answerable after resuming interrupted sessions.",
