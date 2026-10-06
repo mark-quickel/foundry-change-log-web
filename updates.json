@@ -2,6 +2,20 @@
   {
     "week": 34,
     "category": "github",
+    "date": "2026-10-05",
+    "title": "GitHub Copilot CLI 1.0.92",
+    "summary": "Add `copilot config` subcommands to list, read, set, and remove settings.; Add a pre-conversation Ctrl+E environment picker to switch between local and cloud runs; Entra-protected MCP servers can silently renew access-token-only credentials.; Legacy HTTP+SSE MCP connections no longer hang indefinitely when a message POST is never acknowledged; the ",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 34,
+    "category": "github",
     "date": "2026-10-01",
     "title": "GitHub Copilot CLI 1.0.91",
     "summary": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`; Session timelines now clear busy status after interrupted turns finish.; Sandboxed commands run on Windows versions without filesystem enumeration support, with a warni",
