@@ -2,6 +2,20 @@
   {
     "week": 34,
     "category": "github",
+    "date": "2026-10-08",
+    "title": "GitHub Copilot CLI 1.0.94",
+    "summary": "Add Claude Haiku 5.5 to model selection and --model completions; copilot mcp add recovers cleanly after interrupted MCP config initialization; MCP enable/disable now works before server discovery without starting MCP servers; Assisted permissions send visible shell code to the permission judge instead of requiring unnecessary manual approval",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 34,
+    "category": "github",
     "date": "2026-10-07",
     "title": "GitHub Copilot CLI 1.0.93",
     "summary": "Add enterprise permissions.limitTo to enforce managed domain boundaries for network requests; Run safe /user commands immediately during active turns, reject unsafe remote commands during active turns without opening dialogs, and queue commands advertised by relay hosts; Plugin skill commands stay available after reloading enabled plugins; Sandbox ",
