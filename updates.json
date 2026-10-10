@@ -2,6 +2,20 @@
   {
     "week": 34,
     "category": "github",
+    "date": "2026-10-09",
+    "title": "GitHub Copilot CLI 1.0.95",
+    "summary": "Use native Microsoft Entra broker authentication on macOS when available, with browser fallback.; copilot config supports sandbox credential injectHosts keys, with key completion in Bash, Zsh, and Fish.; --context now applies to new and resumed ACP sessions instead of silently using the default or previously saved context tier; Managed plugin setup",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 34,
+    "category": "github",
     "date": "2026-10-08",
     "title": "GitHub Copilot CLI 1.0.94",
     "summary": "Add Claude Haiku 5.5 to model selection and --model completions; copilot mcp add recovers cleanly after interrupted MCP config initialization; MCP enable/disable now works before server discovery without starting MCP servers; Assisted permissions send visible shell code to the permission judge instead of requiring unnecessary manual approval",
