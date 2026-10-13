@@ -1,5 +1,19 @@
 [
   {
+    "week": 36,
+    "category": "github",
+    "date": "2026-10-12",
+    "title": "GitHub Copilot CLI 1.0.96",
+    "summary": "Interactive sandbox settings suggest possible environment secrets and let you add masking hosts before saving.; Make model IDs in /model and /config model case-insensitive and save canonical IDs; Keep /allow-all available during startup while enterprise policy is still resolving; /add-dir grants sandbox access to added directories for the current s",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
     "week": 34,
     "category": "github",
     "date": "2026-10-09",
