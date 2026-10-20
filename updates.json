@@ -2,6 +2,20 @@
   {
     "week": 36,
     "category": "github",
+    "date": "2026-10-19",
+    "title": "GitHub Copilot CLI 1.0.100",
+    "summary": "Add --disable-client-telemetry flag to turn off client telemetry uploads from the CLI; Add --trust-folder for one-off prompt-mode sessions started with -p or piped stdin; Install verified Skills and plugins from GitHub install links via copilot plugin install \"ghapp://air/install?...\"; Open /share without arguments to view a full-screen action menu",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 36,
+    "category": "github",
     "date": "2026-10-14",
     "title": "GitHub Copilot CLI 1.0.98",
     "summary": "Add support for Gemini 4 Argon; Command hooks complete reliably even when child-exit signals are lost under Node; MCP status and /mcp commands stay synced to the active session after split-view session switches; Resuming a session now respects abandoned pending-permission work and continues only active permission requests.",
