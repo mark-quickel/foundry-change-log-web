@@ -2,6 +2,20 @@
   {
     "week": 36,
     "category": "github",
+    "date": "2026-10-20",
+    "title": "GitHub Copilot CLI 1.0.101",
+    "summary": "Add native structured output for dynamic workflow subagents on supported models; Add assistedApprovalInstructions setting to guide Assisted Permissions confirmation decisions; Shell commands that create and then enter a directory now request path approval instead of being denied early.; Headless and SDK sessions without an OAuth handler skip MCP co",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 36,
+    "category": "github",
     "date": "2026-10-19",
     "title": "GitHub Copilot CLI 1.0.100",
     "summary": "Add --disable-client-telemetry flag to turn off client telemetry uploads from the CLI; Add --trust-folder for one-off prompt-mode sessions started with -p or piped stdin; Install verified Skills and plugins from GitHub install links via copilot plugin install \"ghapp://air/install?...\"; Open /share without arguments to view a full-screen action menu",
