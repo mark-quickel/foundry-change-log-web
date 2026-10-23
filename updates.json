@@ -2,6 +2,20 @@
   {
     "week": 36,
     "category": "github",
+    "date": "2026-10-22",
+    "title": "GitHub Copilot CLI 1.0.103",
+    "summary": "Clicking a completed response code block copies its original code when enabled.; ACP sessions now honor saved sandbox settings and --sandbox/--no-sandbox flags, including on resume.; Cloud replies keep full text when the CLI reconnects after a dropped connection; Sessions browser shows a session's recorded title instead of a generic Session N fallb",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 36,
+    "category": "github",
     "date": "2026-10-21",
     "title": "GitHub Copilot CLI 1.0.102",
     "summary": "Prompt mode now honors managed Auto model selection for -p and piped stdin runs; Subagents honor custom and MCP tool approvals, avoiding duplicate permission prompts and allowing inherited workflows to run; Plugin marketplaces accept git-subdir sources and long plugin descriptions; Fish shell completion works when aliases include option aliases lik",
