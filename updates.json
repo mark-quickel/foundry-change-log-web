@@ -2,6 +2,20 @@
   {
     "week": 40,
     "category": "github",
+    "date": "2026-11-06",
+    "title": "GitHub Copilot CLI 1.0.107",
+    "summary": "Rex terminals render inline images using Kitty direct placements.; Add /code command to open the current session in VS Code; Add a Fusion tier setting to `copilot config`.; Make /settings open the unified dashboard for all users and add global search across settings and local resources.",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "category": "github",
     "date": "2026-11-05",
     "title": "GitHub Copilot CLI 1.0.106",
     "summary": "Rex terminals render inline images using Kitty direct placements.; Add /code command to open the current session in VS Code; Add a Fusion tier setting to `copilot config`.; Make /settings open the unified dashboard for all users and add global search across settings and local resources.",
