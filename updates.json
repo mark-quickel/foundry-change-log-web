@@ -2,6 +2,20 @@
   {
     "week": 40,
     "category": "github",
+    "date": "2026-11-10",
+    "title": "GitHub Copilot CLI 1.0.109",
+    "summary": "Add IPv4/IPv6 CIDR support for sandbox host allow and deny rules in settings.; Add support for Claude Fable 5.2 in the model picker under New models; copilot help input now says that Backspace at the start of shell input leaves shell mode and keeps the typed text, not only on an empty prompt; /subagents keeps its Overridden and Status columns reada",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "category": "github",
     "date": "2026-11-09",
     "title": "GitHub Copilot CLI 1.0.108",
     "summary": "Add `sandbox.userPolicy.filesystem.enumeratePaths` in `settings.json` for Windows enumerate-only directory grants; Add /index commands and enable managed shared tgrep indexing by default for eligible repositories; PDF attachments on Grok 4.7 and Grok 4.6 fall back to file references instead of failing the turn; With the sandbox on, a running local ",
