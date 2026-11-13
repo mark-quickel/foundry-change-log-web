@@ -2,6 +2,34 @@
   {
     "week": 40,
     "category": "github",
+    "date": "2026-11-13",
+    "title": "GitHub Copilot CLI 1.0.111",
+    "summary": "Add regular expression support to enterprise-managed Shell, Bash, and PowerShell permission rules; Add --host-allow-session-creation to let remote clients create sessions on CLI hosts for one launch without changing saved settings; Refresh /usage premium request usage so percentages stay current.; Prevent duplicate MCP OAuth reconnects and keep ser",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "category": "github",
+    "date": "2026-11-12",
+    "title": "GitHub Copilot CLI 1.0.110",
+    "summary": "Experimental: answer git, ssh, and sudo password prompts from agent commands in a masked dialog (enable with /experimental on); Avoid unnecessary error popups during Microsoft Entra sign-in when an organization account is available; Screen readers identify the current session and announce when sessions need attention or are idle in the Sessions lis",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "category": "github",
     "date": "2026-11-10",
     "title": "GitHub Copilot CLI 1.0.109",
     "summary": "Add IPv4/IPv6 CIDR support for sandbox host allow and deny rules in settings.; Add support for Claude Fable 5.2 in the model picker under New models; copilot help input now says that Backspace at the start of shell input leaves shell mode and keeps the typed text, not only on an empty prompt; /subagents keeps its Overridden and Status columns reada",
