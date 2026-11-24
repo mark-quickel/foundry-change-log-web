@@ -2,6 +2,20 @@
   {
     "week": 40,
     "category": "github",
+    "date": "2026-11-23",
+    "title": "GitHub Copilot CLI 1.0.115",
+    "summary": "Enable structured clarification questions in ACP editors that support forms; Enable Windows sandbox package queries by default; set sandbox.userPolicy.capabilities to [] to opt out.; Allow specific macOS Mach service lookups in sandboxed commands with sandbox.userPolicy.seatbelt.extraMachLookups, without enabling Keychain access; Add Ctrl+X then A ",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "category": "github",
     "date": "2026-11-18",
     "title": "GitHub Copilot CLI 1.0.114",
     "summary": "Fixes and changes",
