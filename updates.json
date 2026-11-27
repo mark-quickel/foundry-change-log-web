@@ -2,6 +2,20 @@
   {
     "week": 42,
     "category": "github",
+    "date": "2026-11-27",
+    "title": "GitHub Copilot CLI 1.0.117",
+    "summary": "Add sandbox.userPolicy.network.extraCaCertificates, in user or managed settings, to trust custom CA certificates for sandboxed commands through TLS-intercepting proxies; Add explicit tool exposure so custom agents can opt in to tools; Fix Page Down stalling at a pinned prompt in a 10-row terminal with tabs enabled.; Approving an MCP server's tools ",
+    "impact": "Update your Copilot CLI to get the latest features and bug fixes.",
+    "links": [
+      {
+        "label": "Changelog",
+        "url": "https://github.com/github/copilot-cli/blob/main/changelog.md"
+      }
+    ]
+  },
+  {
+    "week": 42,
+    "category": "github",
     "date": "2026-11-25",
     "title": "GitHub Copilot CLI 1.0.116",
     "summary": "Add a build-time JSON Schema for extension manifests; Click \"Jump to latest\" in the fullscreen timeline to return to the newest output and resume following it.; Choose the context size for supported models in ACP-compatible editors without changing your saved defaults.; Set environment variables for every process Copilot starts (shell commands, loc",
